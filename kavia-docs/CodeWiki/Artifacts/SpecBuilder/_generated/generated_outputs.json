@@ -1,0 +1,310 @@
+{
+  "generated_pages": [
+    "Artifacts/SpecBuilder/pages/_samples/epic.md",
+    "Artifacts/SpecBuilder/pages/_samples/roadmap.md",
+    "Artifacts/SpecBuilder/pages/_samples/roadmap_item.md",
+    "Artifacts/SpecBuilder/pages/_samples/test_case.md",
+    "Artifacts/SpecBuilder/pages/_samples/user_story.md",
+    "Artifacts/SpecBuilder/pages/epics/ens-fr1-meter-data-ingestion.md",
+    "Artifacts/SpecBuilder/pages/epics/ens-fr2-consumption-dashboard.md",
+    "Artifacts/SpecBuilder/pages/epics/ens-fr3-rolling-baseline.md",
+    "Artifacts/SpecBuilder/pages/epics/ens-fr4-anomaly-detection.md",
+    "Artifacts/SpecBuilder/pages/epics/ens-fr5-account-manager-alerts.md",
+    "Artifacts/SpecBuilder/pages/epics/ens-fr6-peer-benchmarking.md",
+    "Artifacts/SpecBuilder/pages/epics/ens-fr7-customer-ranking.md",
+    "Artifacts/SpecBuilder/pages/epics/ens-fr8-report-export.md",
+    "Artifacts/SpecBuilder/pages/roadmap.md",
+    "Artifacts/SpecBuilder/pages/roadmap_items/enersight-analytics-mvp.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-001-upload-valid-site-csv.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-002-reject-invalid-meter-csv.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-003-view-daily-consumption.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-004-view-weekly-monthly-consumption.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-005-view-rolling-four-week-baseline.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-006-detect-threshold-exceeding-anomalies.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-007-highlight-anomalies-on-chart.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-008-review-assigned-anomaly-alerts.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-009-view-anonymized-peer-benchmark.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-010-rank-assigned-customers.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-011-export-authorized-csv-report.md",
+    "Artifacts/SpecBuilder/pages/stories/ens-012-export-authorized-pdf-report.md"
+  ],
+  "generated_sidecars": [
+    "Artifacts/SpecBuilder/sidecars/_samples/epic.actions.json",
+    "Artifacts/SpecBuilder/sidecars/_samples/roadmap.actions.json",
+    "Artifacts/SpecBuilder/sidecars/_samples/roadmap_item.actions.json",
+    "Artifacts/SpecBuilder/sidecars/_samples/test_case.actions.json",
+    "Artifacts/SpecBuilder/sidecars/_samples/user_story.actions.json",
+    "Artifacts/SpecBuilder/sidecars/epics/ens-fr1-meter-data-ingestion.actions.json",
+    "Artifacts/SpecBuilder/sidecars/epics/ens-fr2-consumption-dashboard.actions.json",
+    "Artifacts/SpecBuilder/sidecars/epics/ens-fr3-rolling-baseline.actions.json",
+    "Artifacts/SpecBuilder/sidecars/epics/ens-fr4-anomaly-detection.actions.json",
+    "Artifacts/SpecBuilder/sidecars/epics/ens-fr5-account-manager-alerts.actions.json",
+    "Artifacts/SpecBuilder/sidecars/epics/ens-fr6-peer-benchmarking.actions.json",
+    "Artifacts/SpecBuilder/sidecars/epics/ens-fr7-customer-ranking.actions.json",
+    "Artifacts/SpecBuilder/sidecars/epics/ens-fr8-report-export.actions.json",
+    "Artifacts/SpecBuilder/sidecars/roadmap.actions.json",
+    "Artifacts/SpecBuilder/sidecars/roadmap_items/enersight-analytics-mvp.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-001-upload-valid-site-csv.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-002-reject-invalid-meter-csv.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-003-view-daily-consumption.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-004-view-weekly-monthly-consumption.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-005-view-rolling-four-week-baseline.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-006-detect-threshold-exceeding-anomalies.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-007-highlight-anomalies-on-chart.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-008-review-assigned-anomaly-alerts.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-009-view-anonymized-peer-benchmark.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-010-rank-assigned-customers.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-011-export-authorized-csv-report.actions.json",
+    "Artifacts/SpecBuilder/sidecars/stories/ens-012-export-authorized-pdf-report.actions.json"
+  ],
+  "generator_version": "spec-builder-v1",
+  "input_to_outputs": {
+    "Artifacts/SpecBuilder/json/_samples/epic.json": {
+      "page": "Artifacts/SpecBuilder/pages/_samples/epic.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/_samples/epic.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/_samples/roadmap.json": {
+      "page": "Artifacts/SpecBuilder/pages/_samples/roadmap.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/_samples/roadmap.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/_samples/roadmap_item.json": {
+      "page": "Artifacts/SpecBuilder/pages/_samples/roadmap_item.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/_samples/roadmap_item.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/_samples/test_case.json": {
+      "page": "Artifacts/SpecBuilder/pages/_samples/test_case.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/_samples/test_case.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/_samples/user_story.json": {
+      "page": "Artifacts/SpecBuilder/pages/_samples/user_story.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/_samples/user_story.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr1-meter-data-ingestion.json": {
+      "page": "Artifacts/SpecBuilder/pages/epics/ens-fr1-meter-data-ingestion.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/epics/ens-fr1-meter-data-ingestion.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr2-consumption-dashboard.json": {
+      "page": "Artifacts/SpecBuilder/pages/epics/ens-fr2-consumption-dashboard.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/epics/ens-fr2-consumption-dashboard.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr3-rolling-baseline.json": {
+      "page": "Artifacts/SpecBuilder/pages/epics/ens-fr3-rolling-baseline.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/epics/ens-fr3-rolling-baseline.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr4-anomaly-detection.json": {
+      "page": "Artifacts/SpecBuilder/pages/epics/ens-fr4-anomaly-detection.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/epics/ens-fr4-anomaly-detection.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr5-account-manager-alerts.json": {
+      "page": "Artifacts/SpecBuilder/pages/epics/ens-fr5-account-manager-alerts.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/epics/ens-fr5-account-manager-alerts.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr6-peer-benchmarking.json": {
+      "page": "Artifacts/SpecBuilder/pages/epics/ens-fr6-peer-benchmarking.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/epics/ens-fr6-peer-benchmarking.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr7-customer-ranking.json": {
+      "page": "Artifacts/SpecBuilder/pages/epics/ens-fr7-customer-ranking.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/epics/ens-fr7-customer-ranking.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr8-report-export.json": {
+      "page": "Artifacts/SpecBuilder/pages/epics/ens-fr8-report-export.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/epics/ens-fr8-report-export.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/roadmap.json": {
+      "page": "Artifacts/SpecBuilder/pages/roadmap.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/roadmap.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/roadmap_items/enersight-analytics-mvp.json": {
+      "page": "Artifacts/SpecBuilder/pages/roadmap_items/enersight-analytics-mvp.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/roadmap_items/enersight-analytics-mvp.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-001-upload-valid-site-csv.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-001-upload-valid-site-csv.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-001-upload-valid-site-csv.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-002-reject-invalid-meter-csv.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-002-reject-invalid-meter-csv.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-002-reject-invalid-meter-csv.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-003-view-daily-consumption.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-003-view-daily-consumption.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-003-view-daily-consumption.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-004-view-weekly-monthly-consumption.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-004-view-weekly-monthly-consumption.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-004-view-weekly-monthly-consumption.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-005-view-rolling-four-week-baseline.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-005-view-rolling-four-week-baseline.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-005-view-rolling-four-week-baseline.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-006-detect-threshold-exceeding-anomalies.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-006-detect-threshold-exceeding-anomalies.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-006-detect-threshold-exceeding-anomalies.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-007-highlight-anomalies-on-chart.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-007-highlight-anomalies-on-chart.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-007-highlight-anomalies-on-chart.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-008-review-assigned-anomaly-alerts.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-008-review-assigned-anomaly-alerts.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-008-review-assigned-anomaly-alerts.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-009-view-anonymized-peer-benchmark.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-009-view-anonymized-peer-benchmark.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-009-view-anonymized-peer-benchmark.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-010-rank-assigned-customers.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-010-rank-assigned-customers.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-010-rank-assigned-customers.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-011-export-authorized-csv-report.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-011-export-authorized-csv-report.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-011-export-authorized-csv-report.actions.json"
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-012-export-authorized-pdf-report.json": {
+      "page": "Artifacts/SpecBuilder/pages/stories/ens-012-export-authorized-pdf-report.md",
+      "sidecar": "Artifacts/SpecBuilder/sidecars/stories/ens-012-export-authorized-pdf-report.actions.json"
+    }
+  },
+  "inputs": {
+    "Artifacts/SpecBuilder/json/_samples/epic.json": {
+      "bytes": 1090,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/_samples/roadmap.json": {
+      "bytes": 3813,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/_samples/roadmap_item.json": {
+      "bytes": 5377,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/_samples/test_case.json": {
+      "bytes": 2050,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/_samples/user_story.json": {
+      "bytes": 1560,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr1-meter-data-ingestion.json": {
+      "bytes": 1360,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr2-consumption-dashboard.json": {
+      "bytes": 1423,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr3-rolling-baseline.json": {
+      "bytes": 1261,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr4-anomaly-detection.json": {
+      "bytes": 1388,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr5-account-manager-alerts.json": {
+      "bytes": 1237,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr6-peer-benchmarking.json": {
+      "bytes": 1281,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr7-customer-ranking.json": {
+      "bytes": 1153,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/epics/ens-fr8-report-export.json": {
+      "bytes": 1349,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/roadmap.json": {
+      "bytes": 2899,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/roadmap_items/enersight-analytics-mvp.json": {
+      "bytes": 11348,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-001-upload-valid-site-csv.json": {
+      "bytes": 1852,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-002-reject-invalid-meter-csv.json": {
+      "bytes": 1775,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-003-view-daily-consumption.json": {
+      "bytes": 1766,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-004-view-weekly-monthly-consumption.json": {
+      "bytes": 1775,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-005-view-rolling-four-week-baseline.json": {
+      "bytes": 2125,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-006-detect-threshold-exceeding-anomalies.json": {
+      "bytes": 2067,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-007-highlight-anomalies-on-chart.json": {
+      "bytes": 1670,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-008-review-assigned-anomaly-alerts.json": {
+      "bytes": 2105,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-009-view-anonymized-peer-benchmark.json": {
+      "bytes": 2209,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-010-rank-assigned-customers.json": {
+      "bytes": 2249,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-011-export-authorized-csv-report.json": {
+      "bytes": 2061,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    },
+    "Artifacts/SpecBuilder/json/stories/ens-012-export-authorized-pdf-report.json": {
+      "bytes": 2059,
+      "generator_version": "spec-builder-v1",
+      "sha256": ""
+    }
+  },
+  "version": 2,
+  "warnings": []
+}

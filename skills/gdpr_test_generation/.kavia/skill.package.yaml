@@ -1,0 +1,47 @@
+schema_version: 1
+identity:
+  package_id: gdpr_test_generation
+  name: gdpr-test-generation
+  description: 'Use this skill when the user asks to generate or expand test plans,
+    test cases, acceptance tests, unit/integration tests, or QA checklists for features
+    that process personal data AND there is a clear GDPR/UK GDPR nexus or GDPR-specific
+    obligations are implicated.
+
+
+    Trigger for requests such as:
+
+    - “create a test plan” / “generate test cases” / “write unit tests” / “add integration
+    tests”
+
+    - Testing DSAR flows (access/export, deletion/erasure, rectification, restriction,
+    objection)
+
+    - Testing consent/permissions, preference center, opt-out, and tracking/analytics
+    gating (especially B2C)
+
+    - Testing data minimization (payloads/events), log redaction, masking/tokenization
+
+    - Testing retention/TTL, deletion/anonymization jobs, and backup retention constraints
+
+    - Testing access control, tenant isolation, least privilege, admin access auditing
+
+    - Testing cross-border transfer controls (region pinning, vendor routing constraints)
+    where implemented
+
+
+    Trigger even when GDPR is not named explicitly ONLY when the request implies EU/UK
+    personal data handling or GDPR-specific obligations (e.g., DSAR, DPIA-driven controls,
+    EEA/UK transfer constraints) AND the user is requesting tests.
+
+
+    Do not trigger for general GDPR analysis or document generation (use gdpr-privacy-by-design
+    or gdpr-documentation-generator).
+
+    Do not trigger solely because the system processes personal data.'
+governance:
+  owner: tenant
+  visibility: tenant
+  state: enabled
+discovery:
+  skill_md: Skill.md
+  provenance_yaml: .kavia/provenance.yaml

@@ -1,0 +1,211 @@
+/* Small theme overrides for CodeWiki MkDocs output (Material). */
+
+/*
+  Sticky top header / top-level nav
+
+  Material already uses a fixed/sticky header in most cases, but this makes it
+  explicit and prevents regressions if upstream theme settings change.
+*/
+.md-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/*
+  Ensure the primary (left) sidebar stays visible on DESKTOP when Material tabs
+  are enabled.
+
+  Background:
+  - Material's `navigation.tabs` may hide the left sidebar on some layouts / widths.
+  - CodeWiki wants tabs in the header *and* a persistent left sidebar that shows the
+    currently selected tab's child navigation.
+
+  IMPORTANT — Mobile drawer fix:
+  - This override MUST be scoped to desktop breakpoints only (≥76.25em).
+  - On mobile, MkDocs Material hides `.md-sidebar--primary` and instead serves
+    the nav through the mobile drawer overlay (hamburger menu). Forcing
+    `display: block` unconditionally breaks the mobile drawer.
+*/
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: block;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    display: block;
+    position: sticky;
+    top: var(--md-header-height);
+  }
+}
+
+/*
+  Keep the left nav behavior native and folder-driven. MkDocs Material owns
+  section-index links, checkboxes, labels, and chevrons via `navigation.sections`
+  and `navigation.indexes`; CodeWiki should not intercept or restyle those
+  controls because doing so can break folders that have both index pages and
+  subfolders.
+*/
+
+/*
+  MkDocs Material renders the active page's table of contents as a secondary nav
+  nested under the active primary nav item (for example under the root CodeWiki
+  page). CodeWiki's left navigation must reflect only the filesystem-derived
+  MkDocs nav tree, so suppress that page-local ToC when it appears in the
+  primary sidebar. The standalone right-side ToC drawer remains controlled by the
+  `.md-sidebar--secondary` rules below.
+*/
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item > nav.md-nav--secondary {
+  display: none !important;
+}
+
+/*
+  Replace the always-on desktop right sidebar ToC with a toggleable drawer.
+
+  The page ToC still exists in the DOM, but on desktop it is hidden by default
+  and is revealed through the "On this page" button injected by the theme
+  override template.
+*/
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--secondary {
+    position: fixed;
+    top: var(--md-header-height);
+    right: 0;
+    bottom: 0;
+    width: min(22rem, 28vw);
+    max-width: calc(100vw - 2rem);
+    margin: 0;
+    padding: 0;
+    background: var(--md-default-bg-color);
+    border-left: 1px solid var(--md-default-fg-color--lightest);
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.12);
+    z-index: 1102;
+    transform: translateX(100%);
+    transition: transform 180ms ease-in-out;
+    display: block;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  body[data-codewiki-toc-open="1"] .md-sidebar--secondary {
+    position: fixed !important;
+    top: var(--md-header-height) !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: min(22rem, 28vw) !important;
+    max-width: calc(100vw - 2rem) !important;
+    height: auto !important;
+    transform: translateX(0) !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 1102 !important;
+  }
+
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    height: 100%;
+    padding: 0.8rem 0 1.2rem;
+    overflow: auto;
+  }
+
+  body[data-codewiki-toc-open="1"] .md-sidebar--secondary .md-sidebar__scrollwrap,
+  body[data-codewiki-toc-open="1"] .md-sidebar--secondary .md-nav,
+  body[data-codewiki-toc-open="1"] .md-sidebar--secondary .md-nav__list {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .md-content {
+    margin-right: 0;
+  }
+
+  .codewiki-toc-toggle {
+    position: fixed;
+    top: calc(var(--md-header-height) + 0.55rem);
+    right: 0.8rem;
+    z-index: 1001;
+    margin: 0;
+  }
+}
+
+/*
+  Toggle button injected into the main content header area.
+*/
+.codewiki-toc-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1rem;
+  padding: 0.22rem 0.55rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--md-default-bg-color) 86%, transparent);
+  color: var(--md-default-fg-color--light);
+  font: 0.62rem/1.4 var(--md-text-font-family, inherit);
+  cursor: pointer;
+  opacity: 0.72;
+  box-shadow: 0 0.15rem 0.6rem rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+  transition: opacity 120ms ease-in-out, background-color 120ms ease-in-out, border-color 120ms ease-in-out;
+}
+
+.codewiki-toc-toggle:hover,
+.codewiki-toc-toggle:focus-visible {
+  opacity: 1;
+  background: var(--md-default-bg-color);
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-default-fg-color);
+  outline: none;
+}
+
+body[data-codewiki-toc-open="1"] .codewiki-toc-toggle {
+  opacity: 1;
+  color: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  background: var(--md-default-bg-color);
+}
+
+.codewiki-toc-toggle[hidden] {
+  display: none !important;
+}
+
+.codewiki-toc-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.24);
+  z-index: 1101;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease-in-out;
+}
+
+body[data-codewiki-toc-open="1"] .codewiki-toc-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 76.24em) {
+  .codewiki-toc-toggle,
+  .codewiki-toc-backdrop {
+    display: none !important;
+  }
+}
+
+/*
+  Document actions toolbar styling (existing behavior)
+*/
+.codewiki-doc-actions {
+  font-family: var(--md-text-font-family, inherit);
+}
+
+.codewiki-doc-actions__btn {
+  font-family: inherit;
+}
+
+/* Mermaid block spacing adjustments */
+.mermaid {
+  margin: 0.8rem 0;
+}

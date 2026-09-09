@@ -1,0 +1,118 @@
+---
+name: gdpr-secure-code-generation
+description: 'Use this skill when the user asks to generate, modify, or review code/configuration
+  with an explicit GDPR/UK GDPR privacy-by-design or security-of-processing intent,
+  especially where personal data is handled.
+
+
+  Trigger for requests such as:
+
+  - “generate secure code” / “privacy-by-design implementation” / “GDPR-compliant
+  implementation”
+
+  - Implementing authentication/authorization, tenant isolation, least privilege,
+  audit logging
+
+  - Implementing encryption in transit/at rest, key management integration, secrets
+  handling
+
+  - Implementing data minimization in payloads/events, log redaction, PII masking/tokenization/pseudonymization
+
+  - Implementing retention/TTL, deletion/anonymization workflows, DSAR endpoints (export/delete/rectify)
+
+  - Implementing consent/permissions, preference centers, opt-out/objection handling
+  (where applicable)
+
+  - Implementing vendor integrations/analytics SDKs with data minimization and consent
+  gating
+
+  - Implementing secure defaults in IaC (cloud storage, databases, queues), CI/CD,
+  and environment separation
+
+
+  Trigger even when GDPR is not named explicitly ONLY if the prompt clearly indicates
+  EU/UK nexus or GDPR-specific obligations (e.g., DSAR, lawful basis-driven minimization,
+  DPIA-driven controls, EEA/UK transfer constraints) AND the user is requesting code/config
+  changes.
+
+
+  Do not trigger for general GDPR analysis or document generation (use gdpr-privacy-by-design
+  or gdpr-documentation-generator).
+
+  Do not trigger for non-GDPR security frameworks (e.g., SOC 2) unless the user explicitly
+  asks for GDPR/UK GDPR alignment.'
+enabled: true
+---
+
+Purpose
+Generate or revise code/config with GDPR privacy-by-design and “security of processing” (Art. 32) in mind, without claiming legal compliance. Focus on implementable engineering controls that reduce risk when processing personal data.
+
+Regime detection
+Infer whether EU GDPR, UK GDPR, or both apply. If unclear, ask one clarifying question and proceed with a dual-track approach (EU+UK) where differences matter.
+
+Operating mode (choose based on the prompt)
+1) New code generation (feature implementation)
+2) Patch existing code (diff-style suggestions)
+3) Code review (findings + fixes)
+4) Config/IaC hardening (Terraform/K8s/cloud configs)
+5) API/schema/event design changes for minimization
+
+If the artefact type, language, or framework is unclear, ask:
+- “What language/framework is this (e.g., Node/Java/Python/.NET)?”
+- “Where is personal data stored (DB, logs, analytics, files)?”
+- “Any EU/UK data subjects or hosting constraints?”
+
+Core principles to enforce (apply as relevant)
+A) Data minimization by default
+- Only collect/store fields required for the stated purpose.
+- Prefer derived/aggregated values over raw identifiers where possible.
+- Avoid copying personal data into logs, analytics events, caches, or search indexes unless necessary.
+
+B) Storage limitation (retention & deletion)
+- Implement retention/TTL where feasible (DB TTL, scheduled purge jobs).
+- Implement deletion/anonymization workflows and ensure they cover replicas/caches/search indexes.
+- Address backups: document constraints and implement shortest feasible backup retention; flag where deletion from backups is not immediate.
+
+C) Security of processing (Art. 32) – engineering controls
+- Encryption in transit (TLS) and at rest (DB/storage encryption).
+- Secrets management (no secrets in code; use vault/KMS/secret manager).
+- Strong authentication and authorization; least privilege; tenant isolation for multi-tenant systems.
+- Audit logging for administrative actions and data access (but minimize logged personal data).
+- Input validation and secure defaults; protect against common web vulnerabilities (OWASP Top 10).
+- Rate limiting and abuse prevention for endpoints that expose personal data (export, search, login).
+- Secure error handling (no personal data in error messages).
+
+D) DSAR support hooks (when applicable)
+- Provide patterns/endpoints/services for: export (access/portability), deletion (erasure), rectification, restriction/objection flags.
+- Ensure DSAR actions are authenticated, authorized, and auditable.
+- Provide an internal “data map” approach (where data lives) if needed.
+
+E) Vendor/third-party integrations
+- Minimize data sent to vendors; avoid sending direct identifiers when not required.
+- Support consent/opt-out gating for tracking where relevant (especially B2C).
+- Flag cross-border transfer implications if vendor regions are outside EEA/UK (do not invent safeguards; refer to gdpr-privacy-by-design / documentation-generator if needed).
+
+F) Environment separation
+- Prevent production personal data from being used in dev/test by default.
+- Provide anonymization/synthetic data approaches for non-prod.
+
+B2E/B2B/B2C framing
+- B2E: flag consent weakness; emphasize access controls, monitoring proportionality, works council considerations (flag only).
+- B2B: emphasize DPA-driven processor obligations, tenant isolation, auditability.
+- B2C: emphasize tracking/consent gating, profiling flags, children/minors questions where relevant.
+
+Output requirements (always)
+1) Assumptions + clarifying question(s) (only if needed)
+2) What personal data is involved (as inferred) + minimization notes
+3) Proposed implementation (code/config) with secure defaults
+4) Privacy/security rationale (brief mapping to principles: minimization, retention, Art. 32 controls, DSAR hooks)
+5) “Gaps / needs confirmation” list (e.g., retention period, hosting region, vendor safeguards)
+6) Test guidance (unit/integration tests to verify redaction, access control, deletion, retention)
+
+Coding style requirements
+- Prefer small, composable functions and explicit naming for personal-data fields.
+- Include inline comments where privacy/security decisions are made (e.g., redaction, retention).
+- Provide examples of safe logging (structured logs with redaction).
+- Avoid adding new dependencies unless necessary; if added, justify.
+
+Scope boundary: Provide secure-by-default code/config patterns for GDPR/UK GDPR risk reduction. Not legal advice or a compliance guarantee. Do not generate DPIA/ROPA/privacy notice/LIA/TIA/DPA.

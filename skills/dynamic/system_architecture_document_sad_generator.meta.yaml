@@ -1,0 +1,7 @@
+name: System Architecture Document SAD Generator
+description: This skill guides the AI to generate a comprehensive, structured System
+  Architecture Document (SAD) aligned with the TOGAF Architecture Development Method
+  (ADM) and ISO/IEC/IEEE 42010:2011 standards. It ensures the output consistently
+  follows a standardized 15-section template designed for enterprise-grade technical
+  documentation.
+file: system_architecture_document_sad_generator.txt

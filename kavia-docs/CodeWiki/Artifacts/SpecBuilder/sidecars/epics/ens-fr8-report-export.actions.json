@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-fr8-report-export",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/epics/ens-fr8-report-export.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/epics/ens-fr8-report-export.md"
+  }
+}

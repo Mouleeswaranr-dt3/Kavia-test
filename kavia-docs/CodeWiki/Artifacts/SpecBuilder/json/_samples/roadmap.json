@@ -1,0 +1,122 @@
+{
+  "id": "roadmap",
+  "type": "spec_builder.roadmap",
+  "title": "Spec Builder Packaged Sample Roadmap",
+  "summary": "A customer-facing sample roadmap showing current focus, upcoming work, milestone grouping, and recently completed progress.",
+  "description": "This sample roadmap container demonstrates how packaged Spec Builder artifacts reference roadmap items, milestones, sprints, presentation preferences, and delivery notes while remaining compatible with minimal roadmap JSON.",
+  "status": "active",
+  "owner": "Spec Builder Team",
+  "horizon": "Q1 2026",
+  "current_milestone_id": "sample-m1",
+  "current_sprint_id": "sample-sprint-1",
+  "grouping": {
+    "mode": "milestone",
+    "past_statuses": [
+      "done",
+      "completed",
+      "shipped",
+      "cancelled"
+    ],
+    "current_statuses": [
+      "in_progress",
+      "blocked",
+      "in_review",
+      "active"
+    ],
+    "upcoming_statuses": [
+      "draft",
+      "approved",
+      "planned",
+      "todo"
+    ]
+  },
+  "presentation": {
+    "show_kpis": true,
+    "show_timeline": true,
+    "show_current_focus": true,
+    "show_past_work": true,
+    "default_grouping": "milestone",
+    "past_section_title": "Recently Completed",
+    "upcoming_section_title": "Upcoming Roadmap"
+  },
+  "items": [
+    "sample-spec-builder-refresh",
+    "sample-roadmap-polish",
+    "sample-artifact-configurator"
+  ],
+  "milestones": [
+    {
+      "id": "sample-m1",
+      "title": "Customer-Ready Spec Builder Samples",
+      "description": "Restore realistic sample content and make roadmap pages easier to read in generated CodeWiki sites.",
+      "starts_at": "2026-01-01",
+      "ends_at": "2026-02-01",
+      "target_date": "2026-02-01",
+      "status": "in_progress",
+      "confidence": "medium",
+      "theme": "Sample Quality",
+      "item_ids": [
+        "sample-spec-builder-refresh",
+        "sample-roadmap-polish"
+      ],
+      "sprint_ids": [
+        "sample-sprint-1"
+      ]
+    },
+    {
+      "id": "sample-m2",
+      "title": "Artifact Configuration Follow-Through",
+      "description": "Improve configurator flows for maintaining generated planning artifacts.",
+      "starts_at": "2026-02-02",
+      "ends_at": "2026-03-01",
+      "target_date": "2026-03-01",
+      "status": "planned",
+      "confidence": "high",
+      "theme": "Configuration",
+      "item_ids": [
+        "sample-artifact-configurator"
+      ],
+      "sprint_ids": []
+    }
+  ],
+  "sprints": [
+    {
+      "id": "sample-sprint-1",
+      "title": "Sample Refresh Sprint",
+      "milestone_id": "sample-m1",
+      "starts_at": "2026-01-15",
+      "ends_at": "2026-01-29",
+      "goal": "Make generated roadmap pages demonstrate customer-facing planning structure.",
+      "status": "active",
+      "item_ids": [
+        "sample-spec-builder-refresh",
+        "sample-roadmap-polish"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "title": "Sample drift",
+      "description": "Packaged samples should stay aligned with renderer capabilities as the Spec Builder artifact model evolves.",
+      "status": "monitoring",
+      "owner": "Spec Builder Team"
+    }
+  ],
+  "dependencies": [
+    {
+      "title": "Runtime asset sync",
+      "description": "Generated CodeWiki sites must receive the updated roadmap renderer assets.",
+      "status": "required"
+    }
+  ],
+  "assumptions": [
+    "Roadmap item JSON remains the source of detailed item metadata.",
+    "Existing minimal roadmap containers continue to render without requiring new optional fields."
+  ],
+  "notes": "Use this sample as a compact reference for professional roadmap pages with hero metadata, KPI cards, timeline cards, grouped tables, and delivery notes.",
+  "provenance": {
+    "created_at": "2026-01-15T10:00:00Z",
+    "updated_at": "2026-07-03T16:43:41Z",
+    "source": "spec_builder"
+  }
+}

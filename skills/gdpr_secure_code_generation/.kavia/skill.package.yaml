@@ -1,0 +1,53 @@
+schema_version: 1
+identity:
+  package_id: gdpr_secure_code_generation
+  name: gdpr-secure-code-generation
+  description: 'Use this skill when the user asks to generate, modify, or review code/configuration
+    with an explicit GDPR/UK GDPR privacy-by-design or security-of-processing intent,
+    especially where personal data is handled.
+
+
+    Trigger for requests such as:
+
+    - “generate secure code” / “privacy-by-design implementation” / “GDPR-compliant
+    implementation”
+
+    - Implementing authentication/authorization, tenant isolation, least privilege,
+    audit logging
+
+    - Implementing encryption in transit/at rest, key management integration, secrets
+    handling
+
+    - Implementing data minimization in payloads/events, log redaction, PII masking/tokenization/pseudonymization
+
+    - Implementing retention/TTL, deletion/anonymization workflows, DSAR endpoints
+    (export/delete/rectify)
+
+    - Implementing consent/permissions, preference centers, opt-out/objection handling
+    (where applicable)
+
+    - Implementing vendor integrations/analytics SDKs with data minimization and consent
+    gating
+
+    - Implementing secure defaults in IaC (cloud storage, databases, queues), CI/CD,
+    and environment separation
+
+
+    Trigger even when GDPR is not named explicitly ONLY if the prompt clearly indicates
+    EU/UK nexus or GDPR-specific obligations (e.g., DSAR, lawful basis-driven minimization,
+    DPIA-driven controls, EEA/UK transfer constraints) AND the user is requesting
+    code/config changes.
+
+
+    Do not trigger for general GDPR analysis or document generation (use gdpr-privacy-by-design
+    or gdpr-documentation-generator).
+
+    Do not trigger for non-GDPR security frameworks (e.g., SOC 2) unless the user
+    explicitly asks for GDPR/UK GDPR alignment.'
+governance:
+  owner: tenant
+  visibility: tenant
+  state: enabled
+discovery:
+  skill_md: Skill.md
+  provenance_yaml: .kavia/provenance.yaml

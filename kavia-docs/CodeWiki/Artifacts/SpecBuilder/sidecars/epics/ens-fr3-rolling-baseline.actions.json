@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-fr3-rolling-baseline",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/epics/ens-fr3-rolling-baseline.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/epics/ens-fr3-rolling-baseline.md"
+  }
+}

@@ -1,0 +1,254 @@
+---
+id: "spec_builder.spec_builder.roadmap_item.Commercial Energy Consumption Analytics and Anomaly Alerts MVP"
+type: "spec_builder.roadmap_item"
+title: "Commercial Energy Consumption Analytics and Anomaly Alerts MVP"
+source_json: "Artifacts/SpecBuilder/json/roadmap_items/enersight-analytics-mvp.json"
+generated: true
+---
+
+
+# Commercial Energy Consumption Analytics and Anomaly Alerts MVP
+
+Deliver the approved MVP capabilities for authorized CSV meter-data ingestion, consumption analysis, rolling baselines, anomaly detection and alerts, peer benchmarking when valid data exists, account-manager ranking, and authorized CSV or PDF exports.
+
+- [link](../../../../Specs/FeatureSpecs/commercial-energy-consumption-analytics-anomaly-alerts.md)
+- [link](../../../../Specs/DetailedDesigns/enersight-account-manager-anomaly-follow-up-journey.md)
+- [link](../../../../Specs/DetailedDesigns/enersight-analytics-core-modules.md)
+- [link](../../../../Specs/DetailedDesigns/enersight-stage-4-backend-implementation-artifacts.md)
+- [link](../../../../Specs/ArchitectureSpecs/enersight-analytics-mvp-architecture.md)
+
+<meta name="sb-artifact-type" content="spec_builder.roadmap_item">
+<meta name="sb-artifact-id" content="Commercial Energy Consumption Analytics and Anomaly Alerts MVP">
+
+<div id="sb-page-root" class="sb-page sb-page-spec-builder-roadmap-item" data-loading="true"></div>
+
+<script type="application/json" id="sb-page-data">
+{
+  "id": "enersight-analytics-mvp",
+  "type": "spec_builder.roadmap_item",
+  "title": "Commercial Energy Consumption Analytics and Anomaly Alerts MVP",
+  "description": "Deliver the approved MVP capabilities for authorized CSV meter-data ingestion, consumption analysis, rolling baselines, anomaly detection and alerts, peer benchmarking when valid data exists, account-manager ranking, and authorized CSV or PDF exports.",
+  "status": "draft",
+  "priority": "high",
+  "owner": "Product Owner",
+  "milestone_id": "enersight-mvp",
+  "estimated_effort": "MVP",
+  "tags": [
+    "enersight",
+    "energy-analytics",
+    "mvp",
+    "approved-prd"
+  ],
+  "child_roadmap_item_ids": [],
+  "epic_ids": [
+    "ens-fr1-meter-data-ingestion",
+    "ens-fr2-consumption-dashboard",
+    "ens-fr3-rolling-baseline",
+    "ens-fr4-anomaly-detection",
+    "ens-fr5-account-manager-alerts",
+    "ens-fr6-peer-benchmarking",
+    "ens-fr7-customer-ranking",
+    "ens-fr8-report-export"
+  ],
+  "story_ids": [
+    "ens-001-upload-valid-site-csv",
+    "ens-002-reject-invalid-meter-csv",
+    "ens-003-view-daily-consumption",
+    "ens-004-view-weekly-monthly-consumption",
+    "ens-005-view-rolling-four-week-baseline",
+    "ens-006-detect-threshold-exceeding-anomalies",
+    "ens-007-highlight-anomalies-on-chart",
+    "ens-008-review-assigned-anomaly-alerts",
+    "ens-009-view-anonymized-peer-benchmark",
+    "ens-010-rank-assigned-customers",
+    "ens-011-export-authorized-csv-report",
+    "ens-012-export-authorized-pdf-report"
+  ],
+  "test_case_ids": [],
+  "created_at": "2026-09-07T06:59:32Z",
+  "updated_at": "2026-09-07T06:59:32Z",
+  "epics": [
+    {
+      "id": "ens-fr1-meter-data-ingestion",
+      "title": "FR-1 Meter Reading Data Ingestion",
+      "description": "Accept and validate authorized CSV meter readings for a selected customer site.",
+      "status": "draft",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "ens-001-upload-valid-site-csv",
+          "title": "As a Meter Data Operations Specialist, I want to upload a valid CSV for a selected customer site so that the site has usable consumption data.",
+          "status": "draft",
+          "priority": "high"
+        },
+        {
+          "id": "ens-002-reject-invalid-meter-csv",
+          "title": "As a Meter Data Operations Specialist, I want clear invalid-file feedback so that I can correct meter data without creating an unusable dataset.",
+          "status": "draft",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "ens-fr2-consumption-dashboard",
+      "title": "FR-2 Consumption Dashboard and Period Aggregation",
+      "description": "Present accepted site consumption in daily, weekly, and monthly views with explicit data states.",
+      "status": "draft",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "ens-003-view-daily-consumption",
+          "title": "As a Commercial Customer Operations Lead, I want to view daily consumption for an authorized site and date range so that I can understand day-to-day usage.",
+          "status": "draft",
+          "priority": "high"
+        },
+        {
+          "id": "ens-004-view-weekly-monthly-consumption",
+          "title": "As a Commercial Customer Operations Lead, I want to switch between weekly and monthly consumption views so that I can understand longer-term usage trends.",
+          "status": "draft",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "ens-fr3-rolling-baseline",
+      "title": "FR-3 Rolling Four-Week Baseline",
+      "description": "Calculate and display a valid baseline from the 28 calendar days preceding each evaluated day.",
+      "status": "draft",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "ens-005-view-rolling-four-week-baseline",
+          "title": "As a Commercial Customer Operations Lead, I want to see a valid rolling four-week baseline beside daily actual consumption so that I can recognize material deviations.",
+          "status": "draft",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "ens-fr4-anomaly-detection",
+      "title": "FR-4 Anomaly Detection and Chart Highlighting",
+      "description": "Detect daily consumption above the active threshold and distinguish flagged days in the chart.",
+      "status": "draft",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "ens-006-detect-threshold-exceeding-anomalies",
+          "title": "As a Commercial Customer Operations Lead, I want days exceeding the approved anomaly threshold to be identified accurately so that I can focus on unusual consumption.",
+          "status": "draft",
+          "priority": "high"
+        },
+        {
+          "id": "ens-007-highlight-anomalies-on-chart",
+          "title": "As a Commercial Customer Operations Lead, I want anomaly days to be visually distinguishable on the consumption chart so that I can find them without relying only on color.",
+          "status": "draft",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "ens-fr5-account-manager-alerts",
+      "title": "FR-5 Account Manager Alerts",
+      "description": "Create authorized anomaly alerts for the account manager assigned to the affected customer.",
+      "status": "draft",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "ens-008-review-assigned-anomaly-alerts",
+          "title": "As a Commercial Account Manager, I want to review anomaly alerts for my assigned customers and open the associated site context so that I can prepare follow-up conversations.",
+          "status": "draft",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "ens-fr6-peer-benchmarking",
+      "title": "FR-6 Peer Benchmarking",
+      "description": "Show a non-identifying peer comparison when valid anonymized comparison data is available.",
+      "status": "draft",
+      "priority": "medium",
+      "stories": [
+        {
+          "id": "ens-009-view-anonymized-peer-benchmark",
+          "title": "As a Commercial Customer Operations Lead, I want to see an anonymized peer comparison or a benchmark-unavailable state so that I can understand my site's relative consumption without exposing other customers.",
+          "status": "draft",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "ens-fr7-customer-ranking",
+      "title": "FR-7 Account Manager Customer Ranking",
+      "description": "Allow account managers to rank only their assigned customers by anomaly count or deviation severity.",
+      "status": "draft",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "ens-010-rank-assigned-customers",
+          "title": "As a Commercial Account Manager, I want to rank only my assigned customers by anomaly count or deviation severity so that I can prioritize follow-up work.",
+          "status": "draft",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "ens-fr8-report-export",
+      "title": "FR-8 Consumption Report Export",
+      "description": "Produce authorized consumption reports for a selected date range in CSV or PDF format.",
+      "status": "draft",
+      "priority": "high",
+      "stories": [
+        {
+          "id": "ens-011-export-authorized-csv-report",
+          "title": "As a Commercial Customer Operations Lead, I want to export authorized site consumption data as CSV for a selected date range so that I can use the data in operational analysis.",
+          "status": "draft",
+          "priority": "high"
+        },
+        {
+          "id": "ens-012-export-authorized-pdf-report",
+          "title": "As a Commercial Account Manager, I want to export an authorized PDF consumption report for an assigned site and date range so that I can support customer conversations.",
+          "status": "draft",
+          "priority": "high"
+        }
+      ]
+    }
+  ],
+  "notes": "Product Backlog: The MVP consists of eight features, one per FR-1 through FR-8, decomposed into twelve INVEST-oriented stories. P0 denotes high delivery priority for the MVP, while P1 denotes an MVP feature that depends on approved peer-data governance. No P2 stories are included because the approved PRD does not define later-scope functionality for this backlog.\n\nDefinition of Ready: A story is ready when its PRD traceability is confirmed; its persona, goal, benefit, acceptance criteria, dependencies, and estimate are understood; authorization impacts are identified; and all applicable TBD decisions have been approved or explicitly deferred without blocking the story. Data-dependent stories additionally require representative authorized test data and agreed data-quality rules.\n\nDefinition of Done: A story is done when its acceptance criteria pass using representative data; role and assignment authorization boundaries are verified; invalid, no-data, unavailable, progress, and actionable error states required by the PRD are implemented where applicable; telemetry is emitted without raw meter readings or unnecessary personal data; accessible labels, keyboard interactions, and non-color-only indicators are validated where relevant; and the change is validated behind the approved feature-flag rollout approach.",
+  "acceptance_criteria": [
+    "The backlog traces each approved functional requirement FR-1 through FR-8 to one epic and at least one user story.",
+    "Every user story defines a persona-based statement, description, priority, release, acceptance criteria, dependencies, and an XS, S, M, or L estimate.",
+    "No backlog item introduces direct back-office integration, billing, non-CSV ingestion, equipment control, automated remediation, or external notification functionality."
+  ],
+  "links": {
+    "feature_specs": [
+      "kavia-docs/CodeWiki/Specs/FeatureSpecs/commercial-energy-consumption-analytics-anomaly-alerts.md"
+    ],
+    "detailed_designs": [
+      "kavia-docs/CodeWiki/Specs/DetailedDesigns/enersight-account-manager-anomaly-follow-up-journey.md",
+      "kavia-docs/CodeWiki/Specs/DetailedDesigns/enersight-analytics-core-modules.md",
+      "kavia-docs/CodeWiki/Specs/DetailedDesigns/enersight-stage-4-backend-implementation-artifacts.md"
+    ],
+    "architecture_specs": [
+      "kavia-docs/CodeWiki/Specs/ArchitectureSpecs/enersight-analytics-mvp-architecture.md"
+    ],
+    "research": [
+      {
+        "title": "Commercial Energy Analytics Product and Business Analysis",
+        "path": "kavia-docs/CodeWiki/Specs/Other/commercial-energy-analytics-product-business-analysis.md",
+        "description": "Approved persona, assumption, constraint, risk, and discovery-question context used to refine the backlog without expanding scope."
+      }
+    ]
+  },
+  "source_json_path": "kavia-docs/CodeWiki/Artifacts/SpecBuilder/json/roadmap_items/enersight-analytics-mvp.json",
+  "generated_page_path": "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/roadmap_items/enersight-analytics-mvp.md",
+  "provenance": {
+    "created_at": "2026-09-07T06:59:32Z",
+    "updated_at": "2026-09-07T06:59:32Z",
+    "source": "spec_builder",
+    "external_refs": [
+      "kavia-docs/CodeWiki/Specs/FeatureSpecs/commercial-energy-consumption-analytics-anomaly-alerts.md",
+      "kavia-docs/CodeWiki/Specs/Other/commercial-energy-analytics-product-business-analysis.md"
+    ]
+  }
+}
+</script>

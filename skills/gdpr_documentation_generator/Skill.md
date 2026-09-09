@@ -1,0 +1,169 @@
+---
+name: gdpr-documentation-generator
+description: 'Use this skill when the user asks to create, draft, or generate GDPR
+  documentation artifacts (or templates) such as:
+
+  - DPIA (Data Protection Impact Assessment)
+
+  - ROPA (Record of Processing Activities / Art. 30)
+
+  - Privacy notice / privacy policy content (B2C/B2B/B2E)
+
+  - Legitimate Interests Assessment (LIA)
+
+  - Transfer Impact Assessment (TIA) for SCC-based transfers
+
+  - Data Processing Agreement (DPA) clause checklist or draft outline
+
+  - Joint controller arrangement (Art. 26) outline
+
+  - DSAR procedure / playbook
+
+  - Data retention schedule (privacy-focused)
+
+
+  Trigger when the user explicitly requests “a template”, “a document”, “a filled-out
+  DPIA/ROPA/LIA/TIA”, “draft a privacy notice”, “write the DPA terms”, “create an
+  Art. 30 record”, or “produce compliance documentation”.
+
+
+  Also trigger when another skill (e.g., gdpr-privacy-by-design) concludes that a
+  DPIA/LIA/TIA/ROPA/privacy notice is needed and the user asks to generate the actual
+  document.
+
+
+  Do not trigger for general GDPR analysis, architecture decisions, or privacy-by-design
+  recommendations unless the user is asking for the actual documentation output.'
+enabled: true
+---
+
+Purpose
+Generate GDPR documentation artifacts (templates or filled drafts) based on the information available in the conversation and ingested project documents. This skill turns prior analysis (especially from gdpr-privacy-by-design) into structured documents.
+
+Operating mode (choose based on the user request)
+1) DPIA generator
+2) ROPA (Art. 30) generator
+3) Privacy notice generator (B2C/B2B/B2E)
+4) LIA generator
+5) TIA generator (for SCC transfers)
+6) DPA / Art. 28 checklist or draft outline
+7) Joint controller (Art. 26) outline
+8) DSAR procedure/playbook
+9) Retention schedule
+
+If the user asks for “GDPR documentation” without specifying which, ask which artifact(s) they need and for what scope (system/product, region, business unit).
+
+Regime detection
+Infer whether EU GDPR, UK GDPR, or both apply based on context. If unclear, ask one clarifying question and proceed with a dual-track (EU+UK) draft where feasible.
+
+Inputs to request (only if missing)
+Ask only for what is necessary to produce a usable draft. Prefer targeted questions.
+Typical missing inputs:
+- Organization/entity name and role(s) (controller/processor/joint)
+- Product/system name and description
+- Data subjects and categories of personal data (incl. special category)
+- Purposes of processing and legal bases (Art. 6; Art. 9 if applicable)
+- Recipients/subprocessors and hosting regions
+- Retention periods
+- Security measures (high-level)
+- Cross-border transfer mechanism (adequacy/SCC/BCR) and vendor list
+- Whether automated decision-making/profiling occurs
+- Contact details for privacy inquiries (DPO/contact channel) (for notices)
+
+General rules
+- Use clear headings and structured tables where appropriate.
+- Mark assumptions explicitly and list open questions at the end.
+- Do not invent vendor safeguards, retention periods, or legal bases; if unknown, flag as “TBD” and ask.
+- Keep content practical and auditable (suitable for internal review).
+- Where local supervisory authority templates/lists may apply, note that the organization should align to the relevant authority guidance.
+
+Document-specific requirements
+
+A) DPIA (Data Protection Impact Assessment)
+Include at minimum:
+1. Overview: project/system, scope, stakeholders, regime (EU/UK)
+2. Description of processing: purposes, data flows, categories, recipients, locations
+3. Necessity and proportionality: minimization, retention, access controls, transparency
+4. Risk assessment: threats/impacts/likelihood/severity (use a simple risk matrix)
+5. Measures to address risks: technical/organizational controls, residual risk
+6. DPIA screening summary (WP248 criteria hit)
+7. Consultation/escalation: DPO review, works council (B2E), supervisory authority consultation if high residual risk
+8. Sign-off section and action plan
+
+If gdpr-privacy-by-design already provided DPIA screening and processing inventory, reuse it verbatim where possible.
+
+B) ROPA (Art. 30 record)
+Produce an Art. 30-style table including:
+- Controller/processor identity
+- Purposes
+- Categories of data subjects and personal data
+- Categories of recipients
+- Transfers to third countries + safeguards
+- Retention periods (or criteria)
+- Security measures (high-level)
+Support multiple processing activities.
+
+C) Privacy notice (B2C/B2B/B2E)
+Generate a draft notice with:
+- Who we are (controller), contact/DPO
+- What data we collect (by category)
+- Purposes and legal bases
+- Recipients and subprocessors (at least categories; name key vendors if provided)
+- Transfers and safeguards
+- Retention
+- Rights and how to exercise them (DSAR)
+- Cookies/tracking note if relevant (flag ePrivacy/cookie banner as separate if needed)
+- Complaints to supervisory authority
+Tailor tone and sections for B2E vs B2B vs B2C.
+
+D) LIA (Legitimate Interests Assessment)
+Include:
+- Purpose test
+- Necessity test
+- Balancing test (impact, expectations, safeguards)
+- Outcome and mitigations
+- Opt-out/objection handling where applicable
+
+E) TIA (Transfer Impact Assessment)
+Include:
+- Transfer description (exporter/importer, data, purpose, frequency)
+- Transfer mechanism (SCC module selection if known; otherwise flag)
+- Assessment of third-country laws/practices (high-level, non-legal-advice framing)
+- Supplementary measures (technical/contractual/organizational)
+- Residual risk and decision
+
+F) DPA / Art. 28 checklist or outline
+Provide:
+- Required Art. 28 clauses checklist
+- Subprocessor controls
+- Assistance with DSARs and security incidents
+- Deletion/return at end of services
+- Audit/inspection approach
+- International transfer clauses alignment
+
+G) Joint controller (Art. 26) outline
+Provide:
+- Allocation of responsibilities (transparency, DSAR handling, security, breach notification)
+- Contact point and summary for data subjects
+
+H) DSAR procedure/playbook
+Provide:
+- Intake channels, identity verification, triage
+- Timelines, extensions, exemptions
+- Data discovery steps and system owners
+- Response templates outline and audit logging
+
+I) Retention schedule
+Provide:
+- Data categories → retention period → deletion/anonymization method → system of record → owner
+Flag where retention must be confirmed with legal/regulatory requirements.
+
+Output format (always)
+1) Document title + version/date
+2) Scope and assumptions
+3) The document content (structured)
+4) Open questions / missing inputs
+5) Action items / next steps
+
+Scope boundary
+This skill produces draft GDPR documentation for internal review. It is not legal advice and must be reviewed by the organization’s DPO/legal counsel before use. Flag unknowns as TBD and list required inputs rather than guessing.

@@ -1,0 +1,36 @@
+name: gdpr-documentation-generator
+description: 'Use this skill when the user asks to create, draft, or generate GDPR
+  documentation artifacts (or templates) such as:
+
+  - DPIA (Data Protection Impact Assessment)
+
+  - ROPA (Record of Processing Activities / Art. 30)
+
+  - Privacy notice / privacy policy content (B2C/B2B/B2E)
+
+  - Legitimate Interests Assessment (LIA)
+
+  - Transfer Impact Assessment (TIA) for SCC-based transfers
+
+  - Data Processing Agreement (DPA) clause checklist or draft outline
+
+  - Joint controller arrangement (Art. 26) outline
+
+  - DSAR procedure / playbook
+
+  - Data retention schedule (privacy-focused)
+
+
+  Trigger when the user explicitly requests “a template”, “a document”, “a filled-out
+  DPIA/ROPA/LIA/TIA”, “draft a privacy notice”, “write the DPA terms”, “create an
+  Art. 30 record”, or “produce compliance documentation”.
+
+
+  Also trigger when another skill (e.g., gdpr-privacy-by-design) concludes that a
+  DPIA/LIA/TIA/ROPA/privacy notice is needed and the user asks to generate the actual
+  document.
+
+
+  Do not trigger for general GDPR analysis, architecture decisions, or privacy-by-design
+  recommendations unless the user is asking for the actual documentation output.'
+file: gdpr_documentation_generator.txt

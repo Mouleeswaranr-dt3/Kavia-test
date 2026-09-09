@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "enersight-analytics-mvp",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/roadmap_items/enersight-analytics-mvp.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/roadmap_items/enersight-analytics-mvp.md"
+  }
+}

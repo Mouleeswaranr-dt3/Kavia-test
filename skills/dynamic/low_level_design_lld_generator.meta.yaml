@@ -1,0 +1,6 @@
+name: Low Level Design LLD Generator
+description: This skill guides the AI to generate a detailed, structured Low Level
+  Design (LLD) document for specific components or modules. It ensures the output
+  consistently follows a standardized 18-section template aligned with IEEE 1016-2009,
+  OpenAPI 3.1, AsyncAPI 3.0, and IEEE 829 standards.
+file: low_level_design_lld_generator.txt

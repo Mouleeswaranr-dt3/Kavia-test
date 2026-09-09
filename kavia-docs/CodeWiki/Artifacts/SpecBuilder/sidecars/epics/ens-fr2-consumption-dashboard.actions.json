@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-fr2-consumption-dashboard",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/epics/ens-fr2-consumption-dashboard.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/epics/ens-fr2-consumption-dashboard.md"
+  }
+}

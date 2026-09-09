@@ -1,0 +1,61 @@
+---
+id: "spec_builder.spec_builder.user_story.As a Commercial Customer Operations Lead, I want to see an anonymized peer comparison or a benchmark-unavailable state so that I can understand my site's relative consumption without exposing other customers."
+type: "spec_builder.user_story"
+title: "As a Commercial Customer Operations Lead, I want to see an anonymized peer comparison or a benchmark-unavailable state so that I can understand my site's relative consumption without exposing other customers."
+source_json: "Artifacts/SpecBuilder/json/stories/ens-009-view-anonymized-peer-benchmark.json"
+generated: true
+---
+
+
+# As a Commercial Customer Operations Lead, I want to see an anonymized peer comparison or a benchmark-unavailable state so that I can understand my site's relative consumption without exposing other customers.
+
+This FR-6 story compares selected-site consumption with a valid anonymized business-category average when available and otherwise makes benchmark unavailability explicit.
+
+<meta name="sb-artifact-type" content="spec_builder.user_story">
+<meta name="sb-artifact-id" content="As a Commercial Customer Operations Lead, I want to see an anonymized peer comparison or a benchmark-unavailable state so that I can understand my site's relative consumption without exposing other customers.">
+
+<div id="sb-page-root" class="sb-page sb-page-spec-builder-user-story" data-loading="true"></div>
+
+<script type="application/json" id="sb-page-data">
+{
+  "id": "ens-009-view-anonymized-peer-benchmark",
+  "type": "spec_builder.user_story",
+  "title": "As a Commercial Customer Operations Lead, I want to see an anonymized peer comparison or a benchmark-unavailable state so that I can understand my site's relative consumption without exposing other customers.",
+  "description": "This FR-6 story compares selected-site consumption with a valid anonymized business-category average when available and otherwise makes benchmark unavailability explicit.",
+  "status": "draft",
+  "priority": "medium",
+  "parent_epic": "ens-fr6-peer-benchmarking",
+  "persona": "Commercial Customer Operations Lead",
+  "goal": "see an anonymized peer comparison or a benchmark-unavailable state",
+  "benefit": "I can understand my site's relative consumption without exposing other customers",
+  "acceptance_criteria": [
+    "Given a selected site has a business category and a valid anonymized comparison average for the selected comparison period, when an authorized customer user views the site dashboard, then the view displays whether the site's consumption is above or below the comparison average and the calculated percentage difference.",
+    "Given a valid anonymized comparison average is unavailable for the selected site or comparison period, when an authorized customer user views the site dashboard, then the view displays a benchmark-unavailable state and does not display a peer average.",
+    "Given the customer view displays peer benchmarking, when a user reviews the comparison, then no identifiable consumption data for another customer or site is displayed."
+  ],
+  "dependencies": [
+    "Approved business-category source and authorized selected-site data.",
+    "Approved peer cohort, anonymization, minimum-cohort, comparison-period, calculation, and suppression rules."
+  ],
+  "release": "MVP",
+  "product_priority": "P1",
+  "estimated_effort": "L",
+  "links": [
+    {
+      "type": "epic",
+      "id": "ens-fr6-peer-benchmarking"
+    }
+  ],
+  "tags": [
+    "FR-6",
+    "MVP",
+    "P1"
+  ],
+  "provenance": {
+    "created_at": "2026-09-07T06:59:32Z",
+    "updated_at": "2026-09-07T06:59:32Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}
+</script>

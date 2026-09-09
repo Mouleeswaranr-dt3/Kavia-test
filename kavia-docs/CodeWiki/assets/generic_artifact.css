@@ -1,0 +1,48 @@
+/* -----------------------------------------------------------------------------
+Generic Artifact page styles for client-side JSON rendering (fallback).
+----------------------------------------------------------------------------- */
+
+.sb-page-generic[data-loading="true"]::before {
+  content: "Loading artifact\2026";
+  display: block;
+  padding: 1rem 0;
+  color: var(--md-default-fg-color--light, rgba(0, 0, 0, 0.54));
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* Generic table for arrays of objects */
+.sb-generic-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.95em;
+}
+
+.sb-generic-table th {
+  background: var(--md-code-bg-color, rgba(0, 0, 0, 0.04));
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.14));
+}
+
+.sb-generic-table td {
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.10));
+  vertical-align: top;
+}
+
+.sb-generic-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Nested content inside expandable sections */
+.sb-nested-content {
+  padding: 0.5rem 0;
+}
+
+/* Page title for generic artifacts */
+.sb-page-title {
+  margin-bottom: 0.75rem;
+}

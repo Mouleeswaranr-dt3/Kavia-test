@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "test_case",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/_samples/test_case.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/_samples/test_case.md"
+  }
+}

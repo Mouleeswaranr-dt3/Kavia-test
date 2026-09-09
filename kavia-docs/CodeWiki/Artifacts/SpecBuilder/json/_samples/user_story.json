@@ -1,0 +1,39 @@
+{
+  "id": "sample-author-updated-sample-assets",
+  "type": "spec_builder.user_story",
+  "title": "As a Spec Builder maintainer, I want packaged samples to match the current schemas so that seeded artifacts are trustworthy examples.",
+  "description": "Represent the maintainer need for packaged sample assets that reflect current artifact structures, document expectations, and cross-linking patterns.",
+  "status": "draft",
+  "priority": "high",
+  "parent_epic": "sample-spec-builder-refresh-epic",
+  "persona": "Spec Builder maintainer",
+  "goal": "packaged samples to match the current schemas",
+  "benefit": "seeded artifacts are trustworthy examples",
+  "acceptance_criteria": [
+    "Given a packaged sample JSON file, when a maintainer opens it, then the file uses current type names and includes realistic metadata.",
+    "Given a packaged sample markdown file, when a maintainer reads it, then it contains representative sections instead of placeholder text.",
+    "Given linked sample artifacts, when downstream renderers resolve relationships, then ids and paths remain internally consistent."
+  ],
+  "estimated_effort": "2 story points",
+  "links": [
+    {
+      "type": "epic",
+      "id": "sample-spec-builder-refresh-epic"
+    },
+    {
+      "type": "test_case",
+      "id": "sample-validate-packaged-samples"
+    }
+  ],
+  "tags": [
+    "sample",
+    "spec-builder",
+    "story"
+  ],
+  "provenance": {
+    "created_at": "2026-01-15T10:00:00Z",
+    "updated_at": "2026-01-15T10:00:00Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}

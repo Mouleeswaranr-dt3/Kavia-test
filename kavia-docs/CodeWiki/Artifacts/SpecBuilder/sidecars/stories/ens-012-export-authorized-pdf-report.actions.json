@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-012-export-authorized-pdf-report",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/stories/ens-012-export-authorized-pdf-report.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/stories/ens-012-export-authorized-pdf-report.md"
+  }
+}

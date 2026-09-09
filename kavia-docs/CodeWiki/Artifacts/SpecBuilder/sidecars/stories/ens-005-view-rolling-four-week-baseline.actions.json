@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-005-view-rolling-four-week-baseline",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/stories/ens-005-view-rolling-four-week-baseline.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/stories/ens-005-view-rolling-four-week-baseline.md"
+  }
+}

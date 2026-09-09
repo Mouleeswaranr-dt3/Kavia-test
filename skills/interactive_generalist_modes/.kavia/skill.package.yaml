@@ -1,0 +1,98 @@
+schema_version: kavia.skill_package.v1
+id: interactive_generalist_modes
+name: interactive_generalist_modes
+description: "Unified \u201Cmode ladder\u201D for InteractiveGeneralistAgent. Provides\
+  \ intent routing and per-mode operating procedures (docs, code changes, testing,\
+  \ investigation) via instruction sub-files inside this one skill package."
+version: 0.1.0
+source:
+  ecosystem: kavia-system
+  origin_uri: ''
+  imported_at: ''
+  adapter_version: ''
+  source_package_id: ''
+  source_package_version: ''
+  source_revision: ''
+  source_checksum: ''
+  update_channel: ''
+  last_checked_at: ''
+  latest_available_version: ''
+  latest_available_revision: ''
+instructions:
+  entrypoint: Skill.md
+  format: markdown
+  summary: ''
+files:
+- path: Skill.md
+  role: instructions
+  description: ''
+- path: instructions/docs_mode.md
+  role: instructions
+  description: ''
+- path: instructions/code_change_mode.md
+  role: instructions
+  description: ''
+- path: instructions/testing_mode.md
+  role: instructions
+  description: ''
+- path: instructions/repo_investigation_mode.md
+  role: instructions
+  description: ''
+assets: []
+compatibility:
+  kavia_version_range: ''
+  external_format_version: ''
+  conversion_lossiness: none
+slash_command:
+  command: ''
+  aliases: []
+  enabled: false
+selection:
+  supported_agents:
+  - InteractiveGeneralistAgent
+  - GeneralistAgent
+  task_categories:
+  - '*'
+  trigger_phrases:
+  - documentation
+  - document
+  - write docs
+  - update docs
+  - implement
+  - fix
+  - refactor
+  - run tests
+  - CI failure
+  - verify
+  - investigate
+  - debug
+  - root cause
+  - RCA
+  exclusion_conditions: []
+  required_context_fields: []
+  conditional_context_key: ''
+  prompt_catalog_summary: 'Unified operating modes for InteractiveGeneralistAgent:
+    intent router + per-mode procedures (docs/code/testing/investigation) via instruction
+    sub-files inside one system skill package.'
+  prompt_rendering_hints: []
+tools:
+  declared: []
+  permissions: []
+governance:
+  owner: system
+  visibility: system
+  state: enabled
+  reviewer: ''
+  reviewed_at: ''
+validation:
+  status: passed
+  report_path: .kavia/reports/validation_report.json
+update:
+  policy: manual_review
+  available: false
+  checked_at: ''
+  candidate_report_path: ''
+provenance:
+  created_at: '2026-09-09T03:38:42.538315+00:00'
+  updated_at: '2026-09-09T03:38:42.542065+00:00'
+  external_refs: []

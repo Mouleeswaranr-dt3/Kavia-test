@@ -1,0 +1,40 @@
+{
+  "id": "ens-002-reject-invalid-meter-csv",
+  "type": "spec_builder.user_story",
+  "title": "As a Meter Data Operations Specialist, I want clear invalid-file feedback so that I can correct meter data without creating an unusable dataset.",
+  "description": "This FR-1 story covers validation feedback for missing required columns and invalid timestamp or kWh values, while preventing failed uploads from being used as consumption datasets.",
+  "status": "draft",
+  "priority": "high",
+  "parent_epic": "ens-fr1-meter-data-ingestion",
+  "persona": "Meter Data Operations Specialist",
+  "goal": "receive clear invalid-file feedback",
+  "benefit": "I can correct meter data without creating an unusable dataset",
+  "acceptance_criteria": [
+    "Given an authorized user uploads a CSV that does not contain the required timestamp column or kWh column, when validation runs, then the system rejects the upload, identifies the missing required column or columns, and does not create a usable consumption dataset.",
+    "Given an authorized user uploads a CSV containing a non-parseable timestamp or non-numeric kWh value, when validation runs, then the system reports the invalid data and does not mark the upload as successfully processed."
+  ],
+  "dependencies": [
+    "Final CSV validation and partial-validity policy.",
+    "Actionable validation-error content and upload outcome design."
+  ],
+  "release": "MVP",
+  "product_priority": "P0",
+  "estimated_effort": "S",
+  "links": [
+    {
+      "type": "epic",
+      "id": "ens-fr1-meter-data-ingestion"
+    }
+  ],
+  "tags": [
+    "FR-1",
+    "MVP",
+    "P0"
+  ],
+  "provenance": {
+    "created_at": "2026-09-07T06:59:32Z",
+    "updated_at": "2026-09-07T06:59:32Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}

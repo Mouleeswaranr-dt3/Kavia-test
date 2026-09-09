@@ -1,0 +1,58 @@
+---
+id: "spec_builder.spec_builder.epic.Refresh Spec Builder Packaged Samples"
+type: "spec_builder.epic"
+title: "Refresh Spec Builder Packaged Samples"
+source_json: "Artifacts/SpecBuilder/json/_samples/epic.json"
+generated: true
+---
+
+
+# Refresh Spec Builder Packaged Samples
+
+Deliver updated packaged sample assets that align with the current registry, artifact shapes, and authored markdown expectations.
+
+<meta name="sb-artifact-type" content="spec_builder.epic">
+<meta name="sb-artifact-id" content="Refresh Spec Builder Packaged Samples">
+
+<div id="sb-page-root" class="sb-page sb-page-spec-builder-epic" data-loading="true"></div>
+
+<script type="application/json" id="sb-page-data">
+{
+  "id": "sample-spec-builder-refresh-epic",
+  "type": "spec_builder.epic",
+  "title": "Refresh Spec Builder Packaged Samples",
+  "description": "Deliver updated packaged sample assets that align with the current registry, artifact shapes, and authored markdown expectations.",
+  "status": "draft",
+  "priority": "high",
+  "parent_roadmap_item": "sample-spec-builder-refresh",
+  "story_ids": [
+    "sample-author-updated-sample-assets"
+  ],
+  "estimated_effort": "3 days",
+  "links": [
+    {
+      "type": "roadmap_item",
+      "id": "sample-spec-builder-refresh"
+    },
+    {
+      "type": "story",
+      "id": "sample-author-updated-sample-assets"
+    }
+  ],
+  "tags": [
+    "sample",
+    "spec-builder",
+    "assets"
+  ],
+  "acceptance_criteria": [
+    "All packaged sample files contain realistic, non-placeholder content.",
+    "Sample artifacts demonstrate valid cross-artifact references for downstream rendering."
+  ],
+  "provenance": {
+    "created_at": "2026-01-15T10:00:00Z",
+    "updated_at": "2026-01-15T10:00:00Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}
+</script>

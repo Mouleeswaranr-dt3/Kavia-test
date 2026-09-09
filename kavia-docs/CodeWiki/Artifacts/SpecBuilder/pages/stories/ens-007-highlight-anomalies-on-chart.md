@@ -1,0 +1,60 @@
+---
+id: "spec_builder.spec_builder.user_story.As a Commercial Customer Operations Lead, I want anomaly days to be visually distinguishable on the consumption chart so that I can find them without relying only on color."
+type: "spec_builder.user_story"
+title: "As a Commercial Customer Operations Lead, I want anomaly days to be visually distinguishable on the consumption chart so that I can find them without relying only on color."
+source_json: "Artifacts/SpecBuilder/json/stories/ens-007-highlight-anomalies-on-chart.json"
+generated: true
+---
+
+
+# As a Commercial Customer Operations Lead, I want anomaly days to be visually distinguishable on the consumption chart so that I can find them without relying only on color.
+
+This FR-4 story presents detected anomalies in the chart using accessible visual treatment defined by the delivery design.
+
+<meta name="sb-artifact-type" content="spec_builder.user_story">
+<meta name="sb-artifact-id" content="As a Commercial Customer Operations Lead, I want anomaly days to be visually distinguishable on the consumption chart so that I can find them without relying only on color.">
+
+<div id="sb-page-root" class="sb-page sb-page-spec-builder-user-story" data-loading="true"></div>
+
+<script type="application/json" id="sb-page-data">
+{
+  "id": "ens-007-highlight-anomalies-on-chart",
+  "type": "spec_builder.user_story",
+  "title": "As a Commercial Customer Operations Lead, I want anomaly days to be visually distinguishable on the consumption chart so that I can find them without relying only on color.",
+  "description": "This FR-4 story presents detected anomalies in the chart using accessible visual treatment defined by the delivery design.",
+  "status": "draft",
+  "priority": "high",
+  "parent_epic": "ens-fr4-anomaly-detection",
+  "persona": "Commercial Customer Operations Lead",
+  "goal": "have anomaly days visually distinguishable on the consumption chart",
+  "benefit": "I can find them without relying only on color",
+  "acceptance_criteria": [
+    "Given a day is flagged as an anomaly, when a user views a chart that includes that day, then the chart visually highlights the flagged day in addition to showing the actual consumption data.",
+    "Given charts and anomaly indicators are presented, when a user reviews the visualized information, then the information is usable without relying solely on color."
+  ],
+  "dependencies": [
+    "Detected anomaly flags from ens-006-detect-threshold-exceeding-anomalies.",
+    "Approved accessible chart labels, keyboard interactions, and text alternatives."
+  ],
+  "release": "MVP",
+  "product_priority": "P0",
+  "estimated_effort": "S",
+  "links": [
+    {
+      "type": "epic",
+      "id": "ens-fr4-anomaly-detection"
+    }
+  ],
+  "tags": [
+    "FR-4",
+    "MVP",
+    "P0"
+  ],
+  "provenance": {
+    "created_at": "2026-09-07T06:59:32Z",
+    "updated_at": "2026-09-07T06:59:32Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}
+</script>

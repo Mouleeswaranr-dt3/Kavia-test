@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-fr6-peer-benchmarking",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/epics/ens-fr6-peer-benchmarking.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/epics/ens-fr6-peer-benchmarking.md"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-001-upload-valid-site-csv",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/stories/ens-001-upload-valid-site-csv.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/stories/ens-001-upload-valid-site-csv.md"
+  }
+}

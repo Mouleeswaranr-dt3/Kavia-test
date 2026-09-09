@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-fr5-account-manager-alerts",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/epics/ens-fr5-account-manager-alerts.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/epics/ens-fr5-account-manager-alerts.md"
+  }
+}

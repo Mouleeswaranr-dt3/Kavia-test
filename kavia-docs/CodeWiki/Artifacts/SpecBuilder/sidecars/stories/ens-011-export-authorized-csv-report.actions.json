@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-011-export-authorized-csv-report",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/stories/ens-011-export-authorized-csv-report.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/stories/ens-011-export-authorized-csv-report.md"
+  }
+}

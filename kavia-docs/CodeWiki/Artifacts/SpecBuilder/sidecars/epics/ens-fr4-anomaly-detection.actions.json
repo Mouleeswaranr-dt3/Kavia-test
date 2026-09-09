@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-fr4-anomaly-detection",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/epics/ens-fr4-anomaly-detection.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/epics/ens-fr4-anomaly-detection.md"
+  }
+}

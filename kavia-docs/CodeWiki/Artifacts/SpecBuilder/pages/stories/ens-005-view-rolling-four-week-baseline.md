@@ -1,0 +1,61 @@
+---
+id: "spec_builder.spec_builder.user_story.As a Commercial Customer Operations Lead, I want to see a valid rolling four-week baseline beside daily actual consumption so that I can recognize material deviations."
+type: "spec_builder.user_story"
+title: "As a Commercial Customer Operations Lead, I want to see a valid rolling four-week baseline beside daily actual consumption so that I can recognize material deviations."
+source_json: "Artifacts/SpecBuilder/json/stories/ens-005-view-rolling-four-week-baseline.json"
+generated: true
+---
+
+
+# As a Commercial Customer Operations Lead, I want to see a valid rolling four-week baseline beside daily actual consumption so that I can recognize material deviations.
+
+This FR-3 story calculates a daily baseline as the arithmetic average of the 28 calendar days immediately preceding the evaluated day and avoids showing a baseline when the approved minimum-data rule is not satisfied.
+
+<meta name="sb-artifact-type" content="spec_builder.user_story">
+<meta name="sb-artifact-id" content="As a Commercial Customer Operations Lead, I want to see a valid rolling four-week baseline beside daily actual consumption so that I can recognize material deviations.">
+
+<div id="sb-page-root" class="sb-page sb-page-spec-builder-user-story" data-loading="true"></div>
+
+<script type="application/json" id="sb-page-data">
+{
+  "id": "ens-005-view-rolling-four-week-baseline",
+  "type": "spec_builder.user_story",
+  "title": "As a Commercial Customer Operations Lead, I want to see a valid rolling four-week baseline beside daily actual consumption so that I can recognize material deviations.",
+  "description": "This FR-3 story calculates a daily baseline as the arithmetic average of the 28 calendar days immediately preceding the evaluated day and avoids showing a baseline when the approved minimum-data rule is not satisfied.",
+  "status": "draft",
+  "priority": "high",
+  "parent_epic": "ens-fr3-rolling-baseline",
+  "persona": "Commercial Customer Operations Lead",
+  "goal": "see a valid rolling four-week baseline beside daily actual consumption",
+  "benefit": "I can recognize material deviations",
+  "acceptance_criteria": [
+    "Given a site has accepted daily consumption values for the 28 calendar days immediately before an evaluated day, when the system calculates the baseline for that day, then the baseline equals the arithmetic average of those 28 preceding daily consumption values and excludes the evaluated day.",
+    "Given a site has sufficient data for an evaluated day, when an authorized user views the daily consumption dashboard, then the chart displays both the actual consumption value and the calculated rolling four-week baseline for that day.",
+    "Given a site does not satisfy the approved minimum-data rule for an evaluated day, when the dashboard is displayed, then the system does not present a baseline value for that day as a valid calculation."
+  ],
+  "dependencies": [
+    "Accepted daily consumption data from FR-1 and FR-2.",
+    "Approved handling for missing readings, incomplete history, and the minimum-data rule."
+  ],
+  "release": "MVP",
+  "product_priority": "P0",
+  "estimated_effort": "M",
+  "links": [
+    {
+      "type": "epic",
+      "id": "ens-fr3-rolling-baseline"
+    }
+  ],
+  "tags": [
+    "FR-3",
+    "MVP",
+    "P0"
+  ],
+  "provenance": {
+    "created_at": "2026-09-07T06:59:32Z",
+    "updated_at": "2026-09-07T06:59:32Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}
+</script>

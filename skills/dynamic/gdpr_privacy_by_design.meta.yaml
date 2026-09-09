@@ -1,0 +1,36 @@
+name: gdpr-privacy-by-design
+description: 'Use this skill whenever a request involves system design or delivery
+  artifacts for a system that collects, stores, transmits, or otherwise processes
+  personal data AND there is a clear GDPR/UK GDPR nexus or GDPR-specific concepts
+  are implicated.
+
+
+  Trigger for:
+
+  - Explicit mentions of GDPR, UK GDPR, EDPB, ICO, “privacy-by-design”, “lawful basis”,
+  “Article 6”, “Article 9”, “special category data”, “controller/processor”, “joint
+  controller”, “DSAR”, “right to erasure/access/portability”, “DPIA”, “SCC”, “adequacy
+  decision”, “cross-border transfer”, “ROPA”.
+
+  - EU/EEA/UK nexus indicators: EEA/UK data subjects, EU/UK establishment, offering
+  goods/services to people in the EEA/UK, monitoring behavior in the EEA/UK, or hosting/processing
+  decisions involving EEA/UK personal data.
+
+  - System design or delivery artifacts where GDPR decisions are needed: architecture
+  decisions, technology/hosting selection, vendor/SaaS selection, integrations/subprocessors,
+  data modeling (schemas/events), API design, logging/telemetry/analytics, monitoring,
+  backups/DR, UI/UX forms and consent flows, requirements analysis, user stories,
+  acceptance criteria, product backlog items, epics, PRDs, and test plans.
+
+
+  Trigger even when GDPR is not named explicitly ONLY when the request implies EU/UK
+  personal data handling or GDPR-specific obligations (e.g., DSAR support, lawful
+  basis selection, DPIA screening, controller/processor role decisions, or EEA/UK
+  cross-border transfers).
+
+
+  Do not trigger solely because the system processes personal data. If the request
+  is primarily about other regimes or frameworks (e.g., HIPAA/PHI/BAA, SOC 2 controls/audit
+  readiness), do not take the lead; ask which compliance regime is in scope or defer
+  to the relevant skill.'
+file: gdpr_privacy_by_design.txt

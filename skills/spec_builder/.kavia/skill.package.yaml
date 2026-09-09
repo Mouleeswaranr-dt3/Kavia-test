@@ -1,0 +1,43 @@
+schema_version: kavia.skill_package.v1
+id: spec_builder
+name: Spec Builder
+description: "Required skill for Spec Builder artifact families: roadmap, roadmap item, epic, user story, test case, feature spec, architecture spec, detailed design, research document, execution blueprint, and impact analysis. Use it whenever creating, updating, linking, regenerating, or fixing those artifacts or their generated pages or indexes; prefer it over generic documentation or page editing."
+version: 1.0.0
+source:
+  ecosystem: kavia
+entrypoints:
+  default:
+    file: Skill.md
+    format: markdown
+files:
+  - path: Skill.md
+    role: instructions
+  - path: components/artifacts/roadmap.md
+    role: component
+  - path: components/artifacts/roadmap_item.md
+    role: component
+  - path: components/artifacts/epic.md
+    role: component
+  - path: components/artifacts/user_story.md
+    role: component
+  - path: components/artifacts/test_case.md
+    role: component
+  - path: components/artifacts/feature_spec.md
+    role: component
+  - path: components/artifacts/architecture_spec.md
+    role: component
+  - path: components/artifacts/detailed_design.md
+    role: component
+  - path: components/artifacts/research_doc.md
+    role: component
+  - path: components/artifacts/execution_blueprint.md
+    role: component
+  - path: components/artifacts/impact_analysis.md
+    role: component
+governance:
+  owner: system
+  visibility: system
+  state: enabled
+validation:
+  status: passed
+external_format_version: kavia.native_skill.simple.v1

@@ -199,9 +199,13 @@
       "kavia-docs/CodeWiki/Specs/FeatureSpecs/commercial-energy-consumption-analytics-anomaly-alerts.md"
     ],
     "detailed_designs": [
-      "kavia-docs/CodeWiki/Specs/DetailedDesigns/enersight-account-manager-anomaly-follow-up-journey.md"
+      "kavia-docs/CodeWiki/Specs/DetailedDesigns/enersight-account-manager-anomaly-follow-up-journey.md",
+      "kavia-docs/CodeWiki/Specs/DetailedDesigns/enersight-analytics-core-modules.md",
+      "kavia-docs/CodeWiki/Specs/DetailedDesigns/enersight-stage-4-backend-implementation-artifacts.md"
     ],
-    "architecture_specs": [],
+    "architecture_specs": [
+      "kavia-docs/CodeWiki/Specs/ArchitectureSpecs/enersight-analytics-mvp-architecture.md"
+    ],
     "research": [
       {
         "title": "Commercial Energy Analytics Product and Business Analysis",

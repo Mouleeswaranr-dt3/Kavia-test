@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "roadmap",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/roadmap.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/roadmap.md"
+  }
+}

@@ -1,0 +1,397 @@
+schema_version: "1.0"
+
+shared_runtime_assets:
+  - id: "spec_builder.renderer_registry"
+    source_path: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/spec-builder-renderer-registry.js"
+    description: "Shared renderer registry used by Spec Builder client-side pages."
+  - id: "spec_builder.tags_css"
+    source_path: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/spec-builder-tags.css"
+    description: "Shared Spec Builder tag and badge styles."
+
+artifacts:
+  - id: "spec_builder.roadmap"
+    slug: "roadmap"
+    title: "Roadmap"
+    description: "Top-level Spec Builder roadmap container that holds roadmap metadata, item references, milestones, and overview planning data."
+    classification: "spec_builder"
+    artifact_format: "json"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "json"
+      - "markdown_generated"
+      - "index_updates"
+    rendering_components:
+      - "summaryTable"
+      - "tagsContainer"
+      - "linksSection"
+      - "extraFields"
+    renderers:
+      client_side:
+        js: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/roadmap.js"
+        css: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/roadmap.css"
+    skills:
+      static_skill_slugs:
+        - "spec_builder_roadmap"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/roadmap.md"
+    samples:
+      json_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/json/_samples/roadmap.json"
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/roadmap.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.roadmap_item"
+    slug: "roadmap_item"
+    title: "Roadmap Item"
+    description: "A roadmap item artifact."
+    classification: "spec_builder"
+    artifact_format: "json"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    emits_hub_alias_page: true
+    link_extractors:
+      - from_type: "test_case"
+        fields:
+          - "roadmap_item_id"
+          - "roadmap_item_ids"
+          - "related_roadmap_item_ids"
+          - "roadmap_ids"
+    outputs:
+      - "json"
+      - "markdown_generated"
+      - "index_updates"
+    rendering_components:
+      - "summaryTable"
+      - "crossArtifactTable"
+      - "tagsContainer"
+      - "linksSection"
+      - "acceptanceCriteria"
+      - "extraFields"
+    table_patterns:
+      - pattern_id: "epics_and_stories"
+        source_field: "epic_ids"
+        resolve_type: "epic"
+        nested:
+          source_field: "story_ids"
+          resolve_type: "user_story"
+        columns:
+          - field: "id"
+            heading: "ID"
+            link_to_page: true
+          - field: "title"
+            heading: "Title"
+          - field: "status"
+            heading: "Status"
+          - field: "priority"
+            heading: "Priority"
+      - pattern_id: "test_cases"
+        source_field: "test_case_ids"
+        resolve_type: "test_case"
+        columns:
+          - field: "id"
+            heading: "Test ID"
+            link_to_page: true
+          - field: "title"
+            heading: "Title"
+          - field: "status"
+            heading: "Status"
+    renderers:
+      client_side:
+        js: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/roadmap_item.js"
+        css: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/roadmap_item.css"
+    skills:
+      static_skill_slugs:
+        - "spec_builder_roadmap_item"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/roadmap_item.md"
+    samples:
+      json_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/json/_samples/roadmap_item.json"
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/roadmap_item.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.test_case"
+    slug: "test_case"
+    title: "Test Case"
+    description: "A test case artifact."
+    classification: "spec_builder"
+    artifact_format: "json"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    emits_index_page: true
+    outputs:
+      - "json"
+      - "markdown_generated"
+      - "index_updates"
+    rendering_components:
+      - "summaryTable"
+      - "tagsContainer"
+      - "linksSection"
+      - "extraFields"
+    renderers:
+      client_side:
+        js: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/test_case.js"
+        css: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/test_case.css"
+    skills:
+      static_skill_slugs:
+        - "spec_builder_test_case"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/test_case.md"
+    samples:
+      json_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/json/_samples/test_case.json"
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/test_case.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.epic"
+    slug: "epic"
+    title: "Epic"
+    description: "An epic artifact."
+    classification: "spec_builder"
+    artifact_format: "json"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "json"
+      - "markdown_generated"
+      - "index_updates"
+    rendering_components:
+      - "summaryTable"
+      - "crossArtifactTable"
+      - "tagsContainer"
+      - "linksSection"
+      - "acceptanceCriteria"
+      - "extraFields"
+    table_patterns:
+      - pattern_id: "stories"
+        source_field: "story_ids"
+        resolve_type: "user_story"
+        columns:
+          - field: "id"
+            heading: "ID"
+            link_to_page: true
+          - field: "title"
+            heading: "Title"
+          - field: "status"
+            heading: "Status"
+          - field: "priority"
+            heading: "Priority"
+    renderers:
+      client_side:
+        js: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/epic.js"
+        css: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/epic.css"
+    skills:
+      static_skill_slugs:
+        - "spec_builder_epic"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/epic.md"
+    samples:
+      json_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/json/_samples/epic.json"
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/epic.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.user_story"
+    slug: "user_story"
+    title: "User Story"
+    description: "A user story artifact."
+    classification: "spec_builder"
+    artifact_format: "json"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "json"
+      - "markdown_generated"
+      - "index_updates"
+    rendering_components:
+      - "summaryTable"
+      - "tagsContainer"
+      - "linksSection"
+      - "acceptanceCriteria"
+      - "extraFields"
+    renderers:
+      client_side:
+        js: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/user_story.js"
+        css: "CodeGenerationAgent/src/code_generation_core_agent/spec_builder/source_assets/runtime_assets/user_story.css"
+    skills:
+      static_skill_slugs:
+        - "spec_builder_user_story"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/user_story.md"
+    samples:
+      json_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/json/_samples/user_story.json"
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/user_story.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.feature_spec"
+    slug: "feature_spec"
+    title: "Feature Spec"
+    description: "A feature specification artifact."
+    classification: "spec_builder"
+    artifact_format: "markdown"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "markdown_authored"
+      - "index_updates"
+    renderers:
+      client_side: {}
+    skills:
+      static_skill_slugs:
+        - "spec_builder_feature_spec"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/feature_spec.md"
+    samples:
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/feature_spec.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.architecture_spec"
+    slug: "architecture_spec"
+    title: "Architecture Spec"
+    description: "An architecture specification artifact."
+    classification: "spec_builder"
+    artifact_format: "markdown"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "markdown_authored"
+      - "index_updates"
+    renderers:
+      client_side: {}
+    skills:
+      static_skill_slugs:
+        - "spec_builder_architecture_spec"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/architecture_spec.md"
+    samples:
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/architecture_spec.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.detailed_design"
+    slug: "detailed_design"
+    title: "Detailed Design"
+    description: "A detailed design artifact."
+    classification: "spec_builder"
+    artifact_format: "markdown"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "markdown_authored"
+      - "index_updates"
+    renderers:
+      client_side: {}
+    skills:
+      static_skill_slugs:
+        - "spec_builder_detailed_design"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/detailed_design.md"
+    samples:
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/detailed_design.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.research_doc"
+    slug: "research_doc"
+    title: "Research Doc"
+    description: "A research document artifact."
+    classification: "spec_builder"
+    artifact_format: "markdown"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "markdown_authored"
+      - "index_updates"
+    renderers:
+      client_side: {}
+    skills:
+      static_skill_slugs:
+        - "spec_builder_research_doc"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/research_doc.md"
+    samples:
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/research_doc.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.execution_blueprint"
+    slug: "execution_blueprint"
+    title: "Execution Blueprint"
+    description: "An execution blueprint artifact."
+    classification: "spec_builder"
+    artifact_format: "markdown"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "markdown_authored"
+      - "index_updates"
+    renderers:
+      client_side: {}
+    skills:
+      static_skill_slugs:
+        - "spec_builder_execution_blueprint"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/execution_blueprint.md"
+    samples:
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/execution_blueprint.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"
+
+  - id: "spec_builder.impact_analysis"
+    slug: "impact_analysis"
+    title: "Impact Analysis"
+    description: "An impact analysis artifact."
+    classification: "spec_builder"
+    artifact_format: "markdown"
+    visibility:
+      - "artifact_config_panel"
+      - "codewiki_nav"
+    outputs:
+      - "markdown_authored"
+      - "index_updates"
+    renderers:
+      client_side: {}
+    skills:
+      static_skill_slugs:
+        - "spec_builder_impact_analysis"
+      dynamic_skill_slugs: []
+      component_refs:
+        artifact:
+          - "components/artifacts/impact_analysis.md"
+    samples:
+      markdown_sample_path: "kavia-docs/CodeWiki/Artifacts/SpecBuilder/pages/_samples/impact_analysis.md"
+    document_actions:
+      metadata_path: "kavia-docs/CodeWiki/assets/document_action_metadata.json"

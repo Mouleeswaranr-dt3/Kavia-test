@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-009-view-anonymized-peer-benchmark",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/stories/ens-009-view-anonymized-peer-benchmark.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/stories/ens-009-view-anonymized-peer-benchmark.md"
+  }
+}

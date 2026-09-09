@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "ens-004-view-weekly-monthly-consumption",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/stories/ens-004-view-weekly-monthly-consumption.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/stories/ens-004-view-weekly-monthly-consumption.md"
+  }
+}

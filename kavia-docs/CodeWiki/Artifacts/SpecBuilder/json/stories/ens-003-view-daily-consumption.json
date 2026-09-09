@@ -1,0 +1,40 @@
+{
+  "id": "ens-003-view-daily-consumption",
+  "type": "spec_builder.user_story",
+  "title": "As a Commercial Customer Operations Lead, I want to view daily consumption for an authorized site and date range so that I can understand day-to-day usage.",
+  "description": "This FR-2 story presents one daily consumption value per calendar day from accepted readings and an explicit no-data state when the selected site and range have no accepted data.",
+  "status": "draft",
+  "priority": "high",
+  "parent_epic": "ens-fr2-consumption-dashboard",
+  "persona": "Commercial Customer Operations Lead",
+  "goal": "view daily consumption for an authorized site and date range",
+  "benefit": "I can understand day-to-day usage",
+  "acceptance_criteria": [
+    "Given a selected site has accepted meter readings for a selected date range, when a user selects the daily view, then the dashboard displays one consumption value per calendar day derived from readings in that range.",
+    "Given no accepted consumption data exists for a selected site and date range, when a user opens or changes the dashboard view, then the dashboard displays an explicit no-data state and does not represent the absence of data as zero consumption."
+  ],
+  "dependencies": [
+    "Accepted site-associated meter-reading dataset from FR-1.",
+    "Approved customer organization and site authorization source."
+  ],
+  "release": "MVP",
+  "product_priority": "P0",
+  "estimated_effort": "M",
+  "links": [
+    {
+      "type": "epic",
+      "id": "ens-fr2-consumption-dashboard"
+    }
+  ],
+  "tags": [
+    "FR-2",
+    "MVP",
+    "P0"
+  ],
+  "provenance": {
+    "created_at": "2026-09-07T06:59:32Z",
+    "updated_at": "2026-09-07T06:59:32Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "epic",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/_samples/epic.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/_samples/epic.md"
+  }
+}

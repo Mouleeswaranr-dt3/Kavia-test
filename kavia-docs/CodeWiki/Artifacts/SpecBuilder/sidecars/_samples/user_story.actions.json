@@ -1,0 +1,8 @@
+{
+  "artifact_slug": "user_story",
+  "table_patterns": [],
+  "document": {
+    "source_json": "Artifacts/SpecBuilder/json/_samples/user_story.json",
+    "generated_page": "Artifacts/SpecBuilder/pages/_samples/user_story.md"
+  }
+}

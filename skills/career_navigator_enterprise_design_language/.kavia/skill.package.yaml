@@ -1,0 +1,27 @@
+schema_version: 1
+identity:
+  package_id: career_navigator_enterprise_design_language
+  name: Career Navigator Enterprise Design Language
+  description: 'The single source of truth for all Career Navigator user interface
+    work: the core implementation principle (visual consistency, never redesign),
+    the implementation workflow and design review process, scope protection rules,
+    semantic design tokens, color, typography, spacing, radius, borders, shadows,
+    motion, component standards, AI-experience patterns, accessibility requirements,
+    cross-page consistency rules, a mandatory pre-merge visual QA checklist, and a
+    definition of done. Use this skill for EVERY task that touches the UI — building
+    a new page or screen, adding or modifying a component, styling, theming, restyling,
+    fixing layout or spacing, adjusting colors or typography, implementing a design
+    handoff, reviewing a pull request that changes markup or CSS, or writing any front-end
+    code for Career Navigator. Use it even when the request sounds small ("just make
+    this button bigger", "add a badge here", "make this look nicer", "polish this
+    page"), even when no design file is provided, and even when the request is primarily
+    about functionality but produces visible output. If the change is visible to a
+    user, this skill applies. Consult it BEFORE writing code, not after — it defines
+    both what to build and what you are not permitted to change.'
+governance:
+  owner: tenant
+  visibility: tenant
+  state: enabled
+discovery:
+  skill_md: Skill.md
+  provenance_yaml: .kavia/provenance.yaml

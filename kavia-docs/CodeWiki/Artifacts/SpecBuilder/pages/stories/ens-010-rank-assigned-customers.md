@@ -1,0 +1,63 @@
+---
+id: "spec_builder.spec_builder.user_story.As a Commercial Account Manager, I want to rank only my assigned customers by anomaly count or deviation severity so that I can prioritize follow-up work."
+type: "spec_builder.user_story"
+title: "As a Commercial Account Manager, I want to rank only my assigned customers by anomaly count or deviation severity so that I can prioritize follow-up work."
+source_json: "Artifacts/SpecBuilder/json/stories/ens-010-rank-assigned-customers.json"
+generated: true
+---
+
+
+# As a Commercial Account Manager, I want to rank only my assigned customers by anomaly count or deviation severity so that I can prioritize follow-up work.
+
+This FR-7 story supports selecting the approved ranking criterion, displays it as active, orders only assigned customers accordingly, and does not expose other customer records.
+
+<meta name="sb-artifact-type" content="spec_builder.user_story">
+<meta name="sb-artifact-id" content="As a Commercial Account Manager, I want to rank only my assigned customers by anomaly count or deviation severity so that I can prioritize follow-up work.">
+
+<div id="sb-page-root" class="sb-page sb-page-spec-builder-user-story" data-loading="true"></div>
+
+<script type="application/json" id="sb-page-data">
+{
+  "id": "ens-010-rank-assigned-customers",
+  "type": "spec_builder.user_story",
+  "title": "As a Commercial Account Manager, I want to rank only my assigned customers by anomaly count or deviation severity so that I can prioritize follow-up work.",
+  "description": "This FR-7 story supports selecting the approved ranking criterion, displays it as active, orders only assigned customers accordingly, and does not expose other customer records.",
+  "status": "draft",
+  "priority": "high",
+  "parent_epic": "ens-fr7-customer-ranking",
+  "persona": "Commercial Account Manager",
+  "goal": "rank only my assigned customers by anomaly count or deviation severity",
+  "benefit": "I can prioritize follow-up work",
+  "acceptance_criteria": [
+    "Given an account manager has assigned customers with detected anomalies, when the account manager selects ranking by anomaly count, then the system orders the assigned-customer list from the highest anomaly count to the lowest for the configured ranking period.",
+    "Given an account manager has assigned customers with detected anomalies, when the account manager selects ranking by deviation severity, then the system orders the assigned-customer list according to the approved deviation-severity rule for the configured ranking period.",
+    "Given an account manager views the assigned-customer list, when the list is displayed, then customers not assigned to that account manager are not included.",
+    "Given an account manager changes the ranking criterion, when the selection is applied, then the dashboard identifies the active criterion and refreshes the list ordering accordingly."
+  ],
+  "dependencies": [
+    "Detected anomaly data from FR-4.",
+    "Approved account-manager assignment source.",
+    "Approved ranking period, severity definition, tie-breaking rule, default ranking, and no-data treatment."
+  ],
+  "release": "MVP",
+  "product_priority": "P0",
+  "estimated_effort": "M",
+  "links": [
+    {
+      "type": "epic",
+      "id": "ens-fr7-customer-ranking"
+    }
+  ],
+  "tags": [
+    "FR-7",
+    "MVP",
+    "P0"
+  ],
+  "provenance": {
+    "created_at": "2026-09-07T06:59:32Z",
+    "updated_at": "2026-09-07T06:59:32Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}
+</script>

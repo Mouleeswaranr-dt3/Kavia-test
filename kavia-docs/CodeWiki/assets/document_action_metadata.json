@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "description": "Static default document action metadata for Spec Builder artifacts.",
+  "types": {
+    "roadmap_item": {
+      "label": "Roadmap Item",
+      "enabled": true
+    },
+    "test_case": {
+      "label": "Test Case",
+      "enabled": true
+    },
+    "epic": {
+      "label": "Epic",
+      "enabled": true
+    },
+    "user_story": {
+      "label": "User Story",
+      "enabled": true
+    },
+    "feature_spec": {
+      "label": "Feature Spec",
+      "enabled": true
+    },
+    "architecture_spec": {
+      "label": "Architecture Spec",
+      "enabled": true
+    },
+    "detailed_design": {
+      "label": "Detailed Design",
+      "enabled": true
+    },
+    "research_doc": {
+      "label": "Research Doc",
+      "enabled": true
+    },
+    "execution_blueprint": {
+      "label": "Execution Blueprint",
+      "enabled": true
+    },
+    "impact_analysis": {
+      "label": "Impact Analysis",
+      "enabled": true
+    }
+  }
+}

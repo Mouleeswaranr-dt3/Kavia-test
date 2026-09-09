@@ -1,0 +1,53 @@
+{
+  "id": "sample-validate-packaged-samples",
+  "type": "spec_builder.test_case",
+  "title": "Validate packaged Spec Builder sample assets",
+  "description": "Verify that packaged sample JSON and markdown files are realistic, internally consistent, and aligned with the current registry contracts.",
+  "status": "draft",
+  "priority": "high",
+  "test_type": "acceptance",
+  "parent_story": "sample-author-updated-sample-assets",
+  "roadmap_item_id": "sample-spec-builder-refresh",
+  "preconditions": [
+    "The packaged source_assets bundle has been synced with the current Spec Builder registry.",
+    "Each sample file exists under source_assets/samples/json or source_assets/samples/markdown."
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "Open each packaged sample JSON file and confirm required fields are populated with non-placeholder values.",
+      "expected_result": "Every JSON sample contains a stable id, correct type, and realistic supporting metadata."
+    },
+    {
+      "step": 2,
+      "action": "Open each packaged sample markdown file and confirm it includes representative sections expected by its artifact skill.",
+      "expected_result": "Markdown samples are readable, artifact-specific, and aligned with their companion JSON metadata."
+    },
+    {
+      "step": 3,
+      "action": "Cross-check referenced ids and document paths across roadmap, epic, story, test case, and spec samples.",
+      "expected_result": "Linked ids and markdown paths are internally consistent and use current Spec Builder path conventions."
+    }
+  ],
+  "postconditions": [
+    "Packaged samples can be used as trustworthy defaults or examples for maintainers and users."
+  ],
+  "jira_link": "",
+  "links": [
+    {
+      "type": "user_story",
+      "id": "sample-author-updated-sample-assets"
+    }
+  ],
+  "tags": [
+    "sample",
+    "validation",
+    "spec-builder"
+  ],
+  "provenance": {
+    "created_at": "2026-01-15T10:00:00Z",
+    "updated_at": "2026-01-15T10:00:00Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}

@@ -1,0 +1,62 @@
+---
+id: "spec_builder.spec_builder.user_story.As a Commercial Account Manager, I want to review anomaly alerts for my assigned customers and open the associated site context so that I can prepare follow-up conversations."
+type: "spec_builder.user_story"
+title: "As a Commercial Account Manager, I want to review anomaly alerts for my assigned customers and open the associated site context so that I can prepare follow-up conversations."
+source_json: "Artifacts/SpecBuilder/json/stories/ens-008-review-assigned-anomaly-alerts.json"
+generated: true
+---
+
+
+# As a Commercial Account Manager, I want to review anomaly alerts for my assigned customers and open the associated site context so that I can prepare follow-up conversations.
+
+This FR-5 story creates alert records for anomalies on customers assigned to the account manager and provides authorized navigation from each alert to its related customer-site consumption context.
+
+<meta name="sb-artifact-type" content="spec_builder.user_story">
+<meta name="sb-artifact-id" content="As a Commercial Account Manager, I want to review anomaly alerts for my assigned customers and open the associated site context so that I can prepare follow-up conversations.">
+
+<div id="sb-page-root" class="sb-page sb-page-spec-builder-user-story" data-loading="true"></div>
+
+<script type="application/json" id="sb-page-data">
+{
+  "id": "ens-008-review-assigned-anomaly-alerts",
+  "type": "spec_builder.user_story",
+  "title": "As a Commercial Account Manager, I want to review anomaly alerts for my assigned customers and open the associated site context so that I can prepare follow-up conversations.",
+  "description": "This FR-5 story creates alert records for anomalies on customers assigned to the account manager and provides authorized navigation from each alert to its related customer-site consumption context.",
+  "status": "draft",
+  "priority": "high",
+  "parent_epic": "ens-fr5-account-manager-alerts",
+  "persona": "Commercial Account Manager",
+  "goal": "review anomaly alerts for my assigned customers and open the associated site context",
+  "benefit": "I can prepare follow-up conversations",
+  "acceptance_criteria": [
+    "Given anomaly detection flags a day for a site belonging to a customer with an assigned account manager, when alert generation completes, then the assigned account manager has an alert containing the customer name, site, flagged date, deviation percentage, and suggested action.",
+    "Given an anomaly alert is shown to an account manager, when the account manager opens the alert, then the account manager can navigate to the associated authorized customer-site consumption context.",
+    "Given an account manager is not assigned to a customer, when that customer's site produces an anomaly, then the account manager does not receive or see an alert for that customer."
+  ],
+  "dependencies": [
+    "Detected anomaly flags from FR-4.",
+    "Approved account-manager assignment and authorization source.",
+    "Approved suggested-action content, deduplication, lifecycle, and historical behavior."
+  ],
+  "release": "MVP",
+  "product_priority": "P0",
+  "estimated_effort": "M",
+  "links": [
+    {
+      "type": "epic",
+      "id": "ens-fr5-account-manager-alerts"
+    }
+  ],
+  "tags": [
+    "FR-5",
+    "MVP",
+    "P0"
+  ],
+  "provenance": {
+    "created_at": "2026-09-07T06:59:32Z",
+    "updated_at": "2026-09-07T06:59:32Z",
+    "source": "spec_builder",
+    "external_refs": []
+  }
+}
+</script>

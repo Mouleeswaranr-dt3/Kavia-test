@@ -1,0 +1,11 @@
+name: Reusable Auth Setup
+description: '# Category: Authentication
+
+  # Type: Full Stack Setup
+
+  # Tags: FastAPI, React, Vite, Authentication, Reusable Components
+
+
+  Sets up reusable authentication backend and frontend from the reusable-components
+  repository, runs validation tests, and returns startup URLs and test results.'
+file: reusable_auth_setup.txt

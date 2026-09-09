@@ -1,0 +1,98 @@
+/* Styles for Mermaid fullscreen overlay and controls used by codewiki-mermaid-init.js */
+
+.codewiki-mermaid-fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(1px);
+}
+
+.codewiki-mermaid-fullscreen-overlay.is-open {
+  display: flex;
+}
+
+.codewiki-mermaid-fullscreen-card {
+  width: min(94vw, 1200px);
+  height: min(92vh, 900px);
+
+  background: var(--md-default-bg-color, #fff);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+[data-md-color-scheme="slate"] .codewiki-mermaid-fullscreen-card {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.codewiki-mermaid-fullscreen-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+[data-md-color-scheme="slate"] .codewiki-mermaid-fullscreen-toolbar {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.codewiki-mermaid-fullscreen-title {
+  font-weight: 600;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.codewiki-mermaid-fullscreen-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.codewiki-mermaid-fullscreen-btn {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.88);
+  color: inherit;
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.codewiki-mermaid-fullscreen-zoom {
+  min-width: 3.2rem;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.78;
+}
+
+[data-md-color-scheme="slate"] .codewiki-mermaid-fullscreen-btn {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.codewiki-mermaid-fullscreen-body {
+  flex: 1;
+  overflow: auto;
+  padding: 10px;
+  text-align: left;
+}
+
+.codewiki-mermaid-fullscreen-body svg {
+  max-width: none;
+}
+
+.codewiki-mermaid-fullscreen-body > * {
+  transform-origin: top left;
+}
