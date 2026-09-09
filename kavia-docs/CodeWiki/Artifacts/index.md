@@ -19,6 +19,7 @@ Browse:
 
 - [Spec Builder generated pages index](SpecBuilder/pages/index.md)
 - [EnerSight Analytics backend implementation blueprint](SpecBuilder/pages/blueprints/enersight-analytics-backend-implementation-blueprint.md)
+- [EnerSight Stage 5 backend QA execution blueprint](SpecBuilder/pages/blueprints/enersight-stage-5-backend-qa-execution-blueprint.md)
 - [EnerSight Stage 4 backend implementation gate review](enersight-stage-4-backend-gate-review.md)
 - [EnerSight Stage 4 remediation evidence](enersight-stage-4-remediation-evidence.md)
 

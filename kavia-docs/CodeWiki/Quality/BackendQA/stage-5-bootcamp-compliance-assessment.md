@@ -2,87 +2,154 @@
 
 [CodeWiki](../../index.md) / [Quality](../index.md) / [Backend QA](index.md)
 
-## Assessment Scope and Method
+## Assessment Scope and Evidence Standard
 
-This assessor-style assessment evaluates the Stage 5 Backend QA deliverables against the Bootcamp Handbook Stage 5 requirements. The reassessment uses the seven published Backend QA artifacts, their acceptance-criteria and response-contract updates, and the available Stage 4 predecessor evidence. It distinguishes documented test intent from executed verification. A documented test case or release condition is not treated as proof that the associated backend behavior has passed.
+This assessment evaluates the generated Stage 5 Backend QA deliverables against the authoritative Bootcamp instructions. It covers the Backend Test Strategy, API Test Matrix, acceptance-criteria mapping, Backend Defect Log, Regression Test Strategy, API Readiness Assessment, and Go or No-Go Recommendation. It also evaluates the requested quality measures: at least three cases per endpoint, positive, negative, and boundary coverage, response-schema, status-code, error-handling, data-integrity, failure-mode, and API-contract validation.
 
-The assessment therefore measures both completeness of the requested QA deliverables and evidence that the backend is ready to support the next implementation stage. Statuses use the following meanings: **Complete** means the requested artifact or coverage is documented with sufficient traceability; **Partial** means useful coverage exists but has a material evidence or traceability gap; and **Missing** means the requirement is not evidenced by the current Stage 5 artifacts.
+The assessment distinguishes documentation from verification. A documented scenario, expected status, or response-contract assertion is evidence that a QA approach has been designed; it is not evidence that the API behavior passed. Current backend source and the available tests were inspected to validate whether the Stage 5 artifacts accurately describe the implemented API. No fresh Stage 5 execution result is available in this assessment.
 
-## Goal Compliance
+## ✅ Completed
 
-| Handbook goal | Status | Evidence generated | Remaining gaps |
-| --- | --- | --- | --- |
-| Backend functionality validated in isolation | Partial | The Backend Test Strategy defines unit, PostgreSQL repository-integration, API-integration, worker-flow, contract, and resilience levels. The API Test Matrix provides test scenarios for all implemented routes and states that the API is exercised under `/api/v1`. | The strategy and matrix are plans. No executed Stage 5 suite results, test-run report, or endpoint-by-endpoint pass evidence is included. |
-| API contract compliance verified | Partial | The API Test Matrix specifies methods, routes, expected outcomes, expected status codes, response-contract assertions, and mappings to FR identifiers and explicit feature-spec acceptance criteria. | Response-contract validation is now documented, but no endpoint-by-endpoint Stage 5 execution results prove that the schemas, error envelopes, or actual statuses passed. |
-| Integration, validation, and data-defect detection approach defined | Complete | The Backend Test Strategy defines integration and worker-flow testing, synthetic PostgreSQL data, validation testing, and exit evidence. The defect template captures requirement and test references, reproduction, sanitized evidence, severity, root cause, fix coverage, and retest result. | The approach must still be executed, and the unresolved CSV, duplicate, partial-validity, baseline, and retention policies require approved expected behavior before all defects can be assessed consistently. |
-| Backend readiness established before frontend implementation | Partial | The API Readiness Assessment identifies what is ready for controlled QA, what is partially evidenced, documented response-contract expectations, and the blocking execution gaps. The Go or No-Go Recommendation correctly separates controlled QA authorization from production or Stage 6 authorization. | The current readiness assessment explicitly says that the full Stage 5 API matrix has not passed. It does not establish completed backend QA readiness for a frontend implementation dependency. |
-| API-first QA approach followed | Complete | The test strategy scopes the implemented `/api/v1` surface, and the matrix is organized around HTTP endpoint behavior, authorization, validation, lifecycle states, and persistence assertions. The artifacts require API testing without reliance on a user interface. | Execution evidence is needed to prove that the API-first suite has actually been run against the deployed backend. |
+### Backend Test Strategy
 
-## Deliverable Compliance
+The [Backend Test Strategy](backend-test-strategy.md) is complete as a planning deliverable. It defines the API-first scope, required test levels, synthetic PostgreSQL data expectations, entry and exit criteria, FR-1 through FR-8 traceability, response-contract expectations, and the required worker, resilience, security, and performance evidence.
 
-| Required deliverable | Status | Evidence generated | Remaining gaps |
-| --- | --- | --- | --- |
-| Backend Test Strategy | Complete | `backend-test-strategy.md` defines scope, objectives, test levels, test data, entry and exit criteria, traceability, risks, and mitigations. | The strategy needs execution records and approved policy decisions before it can serve as release evidence. |
-| API Test Cases mapped to Acceptance Criteria | Complete | `api-test-matrix.md` contains 33 API test cases across all implemented endpoint routes, maps them to FR-1 through FR-8, and includes an explicit mapping to the approved feature-spec acceptance criteria. The matrix also identifies frontend-only acceptance criteria that are outside backend API verification. | The mappings require execution results before they can prove implementation conformance. |
-| API Test Matrix | Complete | `api-test-matrix.md` supplies scenarios, preconditions, steps, expected results, expected statuses, response-contract assertion expectations, and an execution-evidence register for the API surface. | Test execution status, actual results, and links to automated test implementations or sanitized run evidence are absent. |
-| Backend Defect Log Template | Complete | `backend-defect-log-template.md` provides a complete defect record structure, severity guidance, release impact, regression linkage, and safe-evidence rules. | No populated defect log or defect triage results are present, which is expected until execution begins. |
-| Regression Test Strategy | Complete | `regression-test-strategy.md` defines fast, contract, PostgreSQL workflow, resilience, provider, and performance tiers, alongside impact rules and release gates. | The documented suites have not yet been evidenced as executable or passing. |
-| API Readiness Assessment | Complete | `api-readiness-assessment.md` reports the readiness posture by API area and explicitly records blocking gaps for production readiness. | The assessment identifies partial evidence but cannot be upgraded without completed Stage 5 execution evidence. |
-| Go/No-Go Recommendation | Complete | `go-no-go-recommendation.md` provides a controlled-QA Go and production No-Go recommendation with conditions for a future Go decision. | It does not contain a distinct decision on whether Stage 6 frontend work may begin; this assessment supplies that decision. |
+The strategy also correctly requires backend testing without a user interface and distinguishes safe unavailable or fail-closed behavior from an enabled provider-backed capability. The accessible backend supports this API-first approach through its FastAPI routes under `/api/v1`, Pydantic transport schemas, and centralized safe error handling.
 
-## Quality-Measure Compliance
+### Backend Defect Log Template
 
-| Handbook quality measure | Status | Evidence generated | Remaining gaps |
-| --- | --- | --- | --- |
-| At least three test cases per endpoint, including one positive and two negative or boundary cases | Complete | The matrix contains at least three scenarios for each implemented route. For example, upload creation has positive, unauthorized, and invalid-content cases; consumption has positive, authorization, validation, unauthenticated, and no-data cases; and export endpoints have positive, unauthorized, unknown-resource, revoked-access, incomplete, and expiry cases. | The cases remain planned until they run and record actual outcomes. |
-| Response-schema validation coverage | Complete for documented coverage | The matrix now defines a response-contract assertion baseline covering required public fields, types, allowed states, nullable values, safe error-envelope fields, and protected-data omission for each contract area. | No automated schema assertion output or endpoint-level Stage 5 execution evidence is available. Documented coverage must not be treated as a passed contract-validation result. |
-| Status-code validation coverage | Complete | Every matrix case specifies an expected HTTP status, including `200`, `202`, `401`, `403`, `404`, `409`, `422`, and `503` where applicable. | Actual response-code execution evidence is still required. |
-| Error-handling validation coverage | Complete | The matrix includes unauthenticated, unauthorized, invalid, unknown-resource, revoked-access, incomplete, expired, and unavailable cases. The test strategy requires safe error envelopes and safe state distinctions. | Execution must verify envelope content and non-disclosure behavior across every documented error path. |
-| Data-integrity validation coverage | Partial | Upload-rejection cases require assertions that rejected uploads produce no accepted readings, analytics, alerts, or downstream jobs. The strategy also covers baseline correctness, strict anomaly thresholds, transactions, and worker claims. | There is no completed data-integrity run evidence, and policy-dependent behaviors for duplicates, row limits, encoding, and partial validity remain unresolved. |
-| Failure-mode coverage | Partial | The artifacts address no-data, unavailable benchmark, rejected uploads, failed and expired exports, retry exhaustion, concurrent worker claims, recovery, and terminal lifecycle states. | Concurrent-worker, recovery, provider, and resilience cases are explicitly still required before release readiness can be confirmed. |
-| Backend can be exercised without a UI | Complete | The strategy requires HTTP-level API testing against `/api/v1` and synthetic PostgreSQL data. The matrix provides direct endpoint methods, paths, preconditions, and expected API outcomes without UI prerequisites. | A runnable Stage 5 API test-suite result is required to demonstrate this operationally. |
-| API contracts traced to FR-1 through FR-8 | Complete | The Backend Test Strategy includes a dedicated FR-1 through FR-8 traceability table, and all matrix cases identify their FR coverage. | Acceptance-criteria-level traceability is still needed to close the separate deliverable gap. |
+The [Backend Defect Log Template](backend-defect-log-template.md) is complete. It provides a usable structure for identifying a defect, linking it to an API matrix case and acceptance criterion, recording actual and expected results, retaining safe execution evidence, assigning severity and ownership, and documenting verified retest evidence.
 
-## Completion Calculation
+The absence of populated defects is not itself a documentation gap. It means that a Stage 5 execution run has not yet produced failures to triage or confirmed passes to retain as test evidence.
 
-The Stage 5 completion percentage is **80%**.
+### Regression Test Strategy
 
-This reassessment credits the closed acceptance-criteria mapping and documented response-contract coverage in addition to the original deliverables and comprehensive endpoint matrix. It continues to discount the lack of executed Stage 5 evidence. It does not award completion credit for planned tests merely because scenarios and expected results are documented. The existing artifacts establish a credible QA framework, but they do not prove that the framework has validated the backend.
+The [Regression Test Strategy](regression-test-strategy.md) is complete as a strategy deliverable. It defines fast unit, API-contract, PostgreSQL workflow, resilience and concurrency, and provider and performance tiers. It correctly states that only passing cases, and formally verified backend-out-of-scope cases where applicable, count toward the Stage 5 gate.
 
-## Assessor Decision
+The accessible repository contains a runnable unit-test suite and an opt-in Neon integration test. These are useful predecessor controls, but they are named and scoped as Stage 4 tests. They do not constitute the complete Stage 5 API matrix or the required Stage 5 execution record.
 
-### GO / NO-GO Recommendation
+### API Readiness Assessment
 
-**Recommendation: No-Go for Stage 5 completion and No-Go for Stage 6 frontend implementation.**
+The [API Readiness Assessment](api-readiness-assessment.md) exists and documents the execution-readiness concept, API dependencies, migration requirements, and test-environment needs. The currently accessible `Kavia-test/backend` checkout contains the application, dependency manifest, pytest configuration, migrations module, and test files needed for source inspection and controlled execution planning.
 
-The existing recommendation to proceed with controlled Stage 5 QA remains appropriate. However, Stage 6 frontend implementation should not begin as a compliance-approved next stage because the required backend readiness has not been established through executed API-first QA. Starting frontend work now would create avoidable risk that the frontend is built against unverified status codes, incomplete schemas, unresolved domain-policy behavior, or provider-dependent unavailable paths.
+The readiness document's earlier assertion that no backend checkout was accessible is no longer aligned with the current repository state. This assessment therefore treats source access as available, while retaining the lack of a configured non-production PostgreSQL environment and completed Stage 5 test execution as the material readiness limitations.
 
-This is not a production-release decision. It is a stage-gate decision based on the Bootcamp requirement that backend functionality and API contracts be validated before frontend implementation begins.
+### Go or No-Go Recommendation
 
-### Stage 6 Frontend Implementation Readiness
+The [Go No-Go Recommendation](go-no-go-recommendation.md) is complete as a decision artifact. Its substantive position remains correct: the evidence does not support production release or a Stage 6 transition. It requires passing endpoint coverage, contract assertions, authorization-negative coverage, lifecycle verification, defect disposition, and resilience evidence before a positive gate can be issued.
 
-**Stage 6 cannot begin yet as a formally compliant stage transition.** The backend can be exercised without a UI and has sufficient documentation to run Stage 5 QA. It has not yet produced the execution evidence needed to establish the stable, validated API contract that frontend implementation should consume.
+### Minimum Test-Case Quantity and Coverage Design
 
-## Mandatory Actions Before Stage 6
+The [API Test Matrix](api-test-matrix.md) documents 33 cases spanning the ten implemented route templates. Each implemented route has at least three documented scenarios, and the matrix includes positive, negative, and boundary-oriented coverage. It includes planned checks for authorization, malformed or invalid input, unknown resources, no-data behavior, unavailable dependencies, lifecycle state, and download reauthorization.
 
-The documentation actions concerning acceptance-criteria traceability and response-contract expectations are complete. The following execution and governance actions remain mandatory before approving Stage 6 frontend implementation:
+The backend implementation confirms ten route templates: two meter-upload routes; consumption, daily-analytics, and benchmark routes; alerts and customer-ranking routes; and three export routes. The matrix therefore meets the Bootcamp's minimum documented case quantity requirement.
 
-1. Execute the Stage 5 API Test Matrix against the API in a PostgreSQL-backed, synthetic-data environment and retain sanitized results for every test case.
+## ⚠️ Partially Completed
 
-2. Execute the existing acceptance-criteria mappings for FR-1 through FR-8 and retain the actual result and disposition for every mapped API case.
+### API Test Matrix
 
-3. Implement or run endpoint-level response-contract assertions that verify required fields, field types, allowed states, nullable fields, and safe omission of protected data, then retain sanitized results.
+The API Test Matrix is substantially complete as a coverage design, but it is only partially complete as a verified Stage 5 deliverable. It identifies routes, preconditions, steps, expected outcomes, acceptance-criteria mappings, and planned response-contract assertions. However, it does not contain actual execution results for API-001 through API-033.
 
-4. Produce evidence that every endpoint has passed its positive, negative, and boundary coverage, including status-code and error-envelope assertions.
+There is also a source-verified contract discrepancy that must be corrected before the matrix can serve as an authoritative execution baseline. The matrix expects `202 Accepted` for successful meter-upload creation and export creation. The implemented `post_meter_upload` and `post_export` FastAPI decorators do not declare `status_code=202`; FastAPI therefore returns the default successful `200 OK` response. The existing opt-in integration test likewise asserts `200` for both successful routes. The matrix must be reconciled to either the current `200` implementation or a separately approved implementation change before those cases can be executed as unambiguous pass criteria.
 
-5. Execute and retain data-integrity evidence for rejected uploads, accepted-data aggregation, baseline and anomaly calculations, worker lifecycle transitions, and export reauthorization.
+### API Test Cases Mapped to Acceptance Criteria
 
-6. Execute the required concurrency, retry, terminal-failure, and recovery tests for upload and export workflows. Resolve or formally defer any Critical or High defects in accordance with the defect template and release-gate rules.
+Acceptance-criteria mapping is present and useful. The matrix maps cases to FR-1 through FR-8 and explains which API cases support the approved feature acceptance criteria. It also correctly identifies frontend-only acceptance criteria, such as chart highlighting and UI navigation, as outside Stage 5 backend API proof.
 
-7. Document approved expected behavior for unresolved policy areas that affect the contract, including CSV limits and duplicate handling, partial validity, baseline sufficiency, ranking periods, peer benchmark governance, PDF export prerequisites, retention, and provider dependencies.
+The mapping remains partial because its underlying API cases are unexecuted and because the expected status-code baseline contains the upload and export discrepancy. Execution records must retain the mapped acceptance criterion, actual result, actual status, response-contract result, and a pass, fail, blocked, or not-run disposition for each applicable case.
 
-8. Update the API Readiness Assessment and Go or No-Go Recommendation with the actual Stage 5 execution results and issue a positive stage-gate decision before frontend implementation begins.
+### Response-Schema and API-Contract Validation
+
+Documented response-contract coverage is complete, but verified response-schema validation is not complete. The matrix requires checks for public fields, field types, nullable fields, permitted states, safe error envelopes, and omission of protected information. The accessible Pydantic schemas and error handlers provide an inspectable contract baseline for uploads, consumption, daily analytics, benchmarks, alerts, rankings, exports, and safe errors.
+
+Existing unit tests verify selected safe error-envelope behavior. The opt-in integration test verifies selected response fields and protected workflow outcomes. Neither suite provides an endpoint-by-endpoint Stage 5 response-schema execution record for all matrix cases and documented states.
+
+### Status-Code and Error-Handling Validation
+
+Status-code and error-handling expectations are documented across the matrix. The backend also implements a centralized safe error envelope containing `code`, `message`, and `correlation_id`, with safe validation details where applicable. Existing unit tests verify selected `422`, `404`, and `500` error-envelope behavior, and the opt-in integration test verifies selected `401`, `404`, and `200` outcomes.
+
+This measure is partially complete because the full API matrix has not run, expected and implemented successful creation statuses are inconsistent, and no Stage 5 evidence establishes every required response status and error path. The matrix must not claim that every planned status has passed.
+
+### Data-Integrity and Failure-Mode Validation
+
+The strategy and matrix define important data-integrity and failure-mode checks. These include invalid-upload rejection without downstream accepted data, aggregation and daily-analytics correctness, strict anomaly threshold behavior, export lifecycle transitions, reauthorization, worker claiming, retry exhaustion, terminal failure, and recovery. Existing Stage 4 tests provide limited supporting evidence for CSV validation, strict-threshold arithmetic, job claiming, export creation, safe errors, and a protected Neon workflow.
+
+The measure remains partial because there is no complete Stage 5 PostgreSQL-backed run proving rejected-upload cleanup, accepted-data aggregation, baseline correctness, end-to-end persistence, contention behavior, retry exhaustion, terminal-state persistence, recovery, or defect retest outcomes. Provider-dependent benchmark availability and PDF export also remain unavailable or fail-closed rather than verified enabled capabilities.
+
+### Backend Readiness Before Frontend Implementation
+
+The backend is sufficiently documented and source-accessible to proceed with controlled Stage 5 QA execution. It exposes a defined API surface, public Pydantic schemas, safe error handling, migration tooling, unit tests, and an opt-in integration harness. This satisfies the prerequisite to begin backend verification work.
+
+It does not satisfy the Bootcamp requirement to establish backend readiness before frontend implementation. The complete API contract has not been validated by the Stage 5 matrix, successful creation status criteria need reconciliation, required data-integrity and resilience evidence is absent, and no updated readiness or gate decision records an evidence-backed Stage 5 GO.
+
+## ❌ Not Started / Missing
+
+### Executed Stage 5 API Evidence
+
+There is no executed Stage 5 result for API-001 through API-033. The existing [Stage 5 API Test Execution Evidence](stage-5-api-test-execution-evidence.md) records a blocked attempt against a different unavailable path and explicitly records zero executed API matrix cases. It is not evidence that any Stage 5 matrix scenario has passed.
+
+A replacement execution record is required from the accessible backend checkout, using a non-production PostgreSQL environment with synthetic data. It must show actual outcome and status for every case, response-contract results, persistence assertions for destructive flows, fixture cleanup, and linked defect records for failures.
+
+### Complete Endpoint-Level Contract Verification
+
+No evidence shows that all endpoint states have passed response-schema assertions, status-code assertions, error-envelope assertions, protected-data omission checks, and API-contract checks. The implementation's schema and error-handler source provides a strong baseline for creating those tests, but inspection is not a substitute for executing API requests.
+
+### Required Concurrency, Recovery, and Resilience Evidence
+
+The Stage 5 strategy requires concurrent worker claims, retry exhaustion, terminal failure, and recovery evidence. The available Stage 4 unit test verifies only a simple single-session queued-job claim, and the opt-in integration test verifies successful processing of one upload and one export. There is no Stage 5 evidence for concurrent claim contention, retry classification, recovery after interruption, or terminal lifecycle behavior.
+
+### Populated Defect Disposition and Retesting
+
+No populated Stage 5 defect log, triage outcome, verified retest, or approved deferral record exists. This is expected before execution begins, but it prevents a release-quality decision because failures and exceptions cannot yet be dispositioned.
+
+### Approved Policy and Provider Decisions
+
+Several contract-affecting items remain unverified or unavailable: peer benchmark governance and provider integration, PDF export prerequisites, CSV size and duplicate policy, partial-validity policy, baseline sufficiency rules, ranking-period rules, retention, and measurable performance objectives. The current backend safely reports benchmark unavailability and does not provide a completed PDF-download path, but Stage 5 has not verified all intended policy outcomes.
+
+## Current Stage 5 Completion Percentage
+
+The current Stage 5 completion percentage is **65%**.
+
+This percentage credits the completed QA planning artifacts, documented acceptance-criteria mapping, documented minimum three-case-per-route coverage, defect-management process, regression strategy, readiness and gate documentation, and source-confirmed API contract baseline. It discounts the unexecuted API matrix, missing endpoint-level result evidence, unreconciled `200` versus `202` successful-creation expectations, unexecuted data-integrity and resilience verification, and absent defect disposition.
+
+The percentage does not award passing-test credit for documented test cases or for predecessor Stage 4 tests. Stage 4 evidence supports the feasibility of Stage 5 execution but does not replace Stage 5 verification.
+
+## Remaining Tasks Required to Complete Stage 5
+
+1. Reconcile API-001 and API-025 successful creation expectations with the actual implementation. The matrix must expect `200 OK`, or the backend must be separately changed to explicitly return `202 Accepted`; the chosen contract must be reflected consistently in the matrix and tests.
+
+2. Configure an isolated non-production PostgreSQL environment and synthetic fixtures for the accessible `Kavia-test/backend` checkout. Ensure migrations, application startup, worker execution, test dependencies, and cleanup can run without exposing credentials or protected data.
+
+3. Implement or execute API-001 through API-033 against the reconciled contract. Record each case's actual status, actual result, response-contract assertion outcome, persistence result where applicable, and disposition.
+
+4. Verify all documented positive, negative, and boundary scenarios, including unauthenticated and unauthorized paths, invalid dates and formats, unknown resources, no-data results, unavailable benchmark behavior, incomplete or expired export handling, and export download reauthorization.
+
+5. Execute response-schema and protected-data omission assertions for each endpoint and relevant lifecycle state. Verify status payloads omit raw CSV content, database URLs, credentials, tokens, signed URLs, internal storage references, peer identities, and internal diagnostics.
+
+6. Execute PostgreSQL-backed data-integrity tests for rejected uploads, accepted readings, aggregation, analytics, baseline and anomaly outcomes, export lifecycle, job correlation, audit records, and cleanup.
+
+7. Execute concurrent-worker, retry-exhaustion, terminal-failure, and recovery tests. Retain sanitized evidence for claim contention and durable lifecycle-state behavior.
+
+8. Create and triage defect records for every failure. Close Critical and High defects through verified retests or record a formally approved disposition consistent with the release gate.
+
+9. Update the API Readiness Assessment, Go or No-Go Recommendation, and this assessment with the completed evidence and a new stage-gate decision.
+
+## Exact Next Actions to Reach Stage 5 GO Status
+
+First, make the matrix internally executable by resolving the successful meter-upload and export creation status mismatch. Then run the existing unit suite from `Kavia-test/backend` and prepare a PostgreSQL-backed Stage 5 fixture environment for the API matrix. The opt-in Neon integration test may provide supplemental evidence when its explicitly required environment is available, but it must not be treated as a substitute for the complete matrix.
+
+Next, execute every matrix case against the live FastAPI application, including the required response-schema, safe-error, authorization, persistence, cleanup, and protected-data assertions. Run the dedicated concurrency, retry, terminal-failure, and recovery scenarios. Record actual results in the execution-evidence register and create defect entries for failures.
+
+Finally, resolve or formally disposition all blocking defects, ensure every applicable matrix case has a passing result, verify all required regression tiers, and update the readiness and Go or No-Go documents. A Stage 5 GO may be issued only after the evidence demonstrates that the API contract consumed by the frontend is stable and validated.
+
+## Stage 6 Decision
+
+**Stage 6 cannot begin.**
+
+The blocking condition is not the absence of backend source code. The current repository provides an inspectable backend checkout with defined routes, schemas, tests, migrations, and a controlled API-first testing approach. The blocking condition is that Stage 5 has not produced evidence that the full backend contract works as documented.
+
+In particular, frontend implementation must not start until the matrix's expected successful creation statuses are reconciled with the backend contract, every required endpoint has passed positive, negative, and boundary verification, response schemas and safe errors have been validated, data integrity and worker resilience have been demonstrated, and any blocking defects have been resolved or formally accepted. Starting Stage 6 beforehand would risk binding frontend behavior to unverified or inconsistent API statuses, lifecycle semantics, and provider-dependent behavior.
 
 ## Evidence Sources
 
-This assessment is based on the Bootcamp Handbook Stage 5 instruction set, the approved feature specification, available Stage 4 predecessor evidence, and the current Stage 5 Backend QA deliverables. The assessment does not treat unexecuted strategy or matrix content as completed test evidence.
+This assessment used the authoritative Bootcamp instruction attachment; the Stage 5 Backend QA artifacts in this folder; `backend/app/main.py` for the implemented routes and default response behavior; `backend/app/schemas.py` for public response schemas; `backend/app/errors.py` for safe error handling; `backend/tests/unit/test_stage4_foundations.py` and `backend/tests/unit/test_stage4_remediation.py` for existing unit evidence; and `backend/tests/integration/test_neon_stage4_workflows.py` for the opt-in protected workflow evidence.

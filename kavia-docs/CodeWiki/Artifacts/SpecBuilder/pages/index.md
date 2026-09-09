@@ -8,6 +8,7 @@ Generated artifact pages:
 - [test_case](_samples/test_case.md)
 - [user_story](_samples/user_story.md)
 - [enersight-analytics-backend-implementation-blueprint](blueprints/enersight-analytics-backend-implementation-blueprint.md)
+- [enersight-stage-5-backend-qa-execution-blueprint](blueprints/enersight-stage-5-backend-qa-execution-blueprint.md)
 - [ens-fr1-meter-data-ingestion](epics/ens-fr1-meter-data-ingestion.md)
 - [ens-fr2-consumption-dashboard](epics/ens-fr2-consumption-dashboard.md)
 - [ens-fr3-rolling-baseline](epics/ens-fr3-rolling-baseline.md)
