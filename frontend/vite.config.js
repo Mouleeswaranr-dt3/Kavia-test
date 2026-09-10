@@ -4,9 +4,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    allowedHosts: true,
+    allowedHosts: ["vscode-internal-29999-beta.beta01.cloud.kavia.ai"],
   },
   preview: {
-    allowedHosts: true,
+    allowedHosts: ["vscode-internal-29999-beta.beta01.cloud.kavia.ai"],
   },
 });
